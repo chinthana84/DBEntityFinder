@@ -7,6 +7,7 @@ using Microsoft.VisualStudio.TextManager.Interop;
 using ServiceLayer;
 using ServiceLayer.Implementations;
 using ServiceLayer.Interfaces;
+using SharedLayer;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.Design;
@@ -123,29 +124,59 @@ namespace VSIXProject2
 
                 Dictionary<string, string> dic = new Dictionary<string, string>();
 
+
+                //                < findObjectVX >
+
+                //        < add key = "FINDSPKEY.NET.ADDON"
+
+                //             value = "Data Source=.;DATABASE=UTP_WMS_01_28;User Id=sa; Password=112;"
+
+                //             dbType = "SQLSERVER" />
+
+
+                //</ findObjectVX >
+
+                AppKeyObject appKeyObject=null;
                 foreach (string file in Directory.EnumerateFiles(solutionPath, "app.config"))
                 {
                     string contents = File.ReadAllText(file);
 
 
                     var xml = XElement.Parse(contents);
-                    dic = xml.Element("appSettings").Descendants("add").ToDictionary(x => x.Attribute("key").Value, x => x.Attribute("value").Value);
 
+                    foreach (var item in xml.Element("findObjectVX").Descendants("add"))
+                    {
+                        if(item.Attribute("key").Value== "FINDSPKEY.NET.ADDON")
+                        {
+                            appKeyObject = new AppKeyObject();
+                            appKeyObject.Key = item.Attribute("key").Value;
+                            appKeyObject.Value = item.Attribute("value").Value;
+                            appKeyObject.dbType = item.Attribute("dbType").Value;
+                            break;
+                        }
+                    }
+
+ 
                 }
 
-                string con = dic.Where(r => r.Key == "xxx").FirstOrDefault().Value;
-                string selection = await GetSelection(ServiceProvider);
+                if (appKeyObject == null)
+                {
+                    throw new ApplicationException("Keynot found");
+                }
+
+                 string selection = await GetSelection(ServiceProvider);
                 if (string.IsNullOrEmpty(selection))
                 {
                     return;
                 }
 
-                IStoredProcedureService i = new StoredProcedureService();
-                string s = i.GetStoredProcedure(selection,con);
+                IStoredProcedureService i = new StoredProcedureService(appKeyObject.dbType);
+                string s = i.GetStoredProcedure(selection, appKeyObject);
                 if (s != "")
                 {
                     frmViewer frmViewer = new frmViewer();
                     frmViewer.richTextBox1.Text = s;
+                    frmViewer.Text = appKeyObject.Value + " " + appKeyObject.dbType;
                     frmViewer.ShowDialog();
                 }
             }

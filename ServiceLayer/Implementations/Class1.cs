@@ -1,5 +1,6 @@
 ﻿using DataAccessLayer;
 using ServiceLayer.Interfaces;
+using SharedLayer;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,13 +15,20 @@ namespace ServiceLayer.Implementations
 
     public class StoredProcedureService : IStoredProcedureService
     {
-        protected IStoredProcedure _idb;
-        string query = "";
-        public StoredProcedureService()
+        protected IStoredProcedure _idb; 
+        public StoredProcedureService(string db)
         {
-            this._idb = new SQLStoredProcedure();
+            if (db.ToUpper() == dbType.SqlServer.ToString().ToUpper())
+            {
+                this._idb = new SQLStoredProcedure();
+            }
+            else
+            {
+                throw new ApplicationException("app key db type not found");
+            }
+          
         }
-        public string GetStoredProcedure(string procName,string connection)
+        public string GetStoredProcedure(string procName, AppKeyObject connection)
         {
 
             return this._idb.GetStoredProcedure(procName, connection);

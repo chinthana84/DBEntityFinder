@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SharedLayer;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -15,7 +16,7 @@ namespace DataAccessLayer
     public interface IDB
     {
         string GetString(string s);
-        DataTable GetDataTable(string query,string con);
+        DataTable GetDataTable(string query, AppKeyObject con);
          
     }
 
@@ -31,10 +32,10 @@ namespace DataAccessLayer
             throw new NotImplementedException();
         }
 
-        public DataTable GetDataTable(string query,string con)
+        public DataTable GetDataTable(string query, AppKeyObject con)
         {
             DataTable dt = new DataTable();
-            SqlConnection sqlConnection = new SqlConnection(con);
+            SqlConnection sqlConnection = new SqlConnection(con.Value);
             SqlDataAdapter da = new SqlDataAdapter(query,sqlConnection);
             da.Fill(dt);
             return dt;
@@ -46,12 +47,18 @@ namespace DataAccessLayer
         protected IDB _idb;
         string query = "";
 
-        public string GetStoredProcedure(string procName,string con)
+        public string GetStoredProcedure(string procName, AppKeyObject con)
         {
-            query= $@"select text
-from syscomments 
-where  object_name(id) ='{procName}'
-order by object_name(id) ";
+            query= $@"SELECT s.text, NAME AS ObjectName
+	                        ,schema_name(o.schema_id) AS SchemaName
+	                        ,type
+	                        ,o.type_desc
+	                        
+                        FROM sys.objects o
+                        inner join  syscomments s on o.object_id=s.id
+                        WHERE o.is_ms_shipped = 0
+                         AND o.NAME ='{procName}'
+                        ORDER BY o.NAME";
            DataTable dt= GetDataTable(query,con);
             if (dt.Rows.Count > 0)
                 return dt.Rows[0][0].ToString() ;
@@ -62,7 +69,7 @@ order by object_name(id) ";
 
     public interface IStoredProcedure
     {
-        string GetStoredProcedure(string procName,string con);
+        string GetStoredProcedure(string procName, AppKeyObject con);
     }
 
 }

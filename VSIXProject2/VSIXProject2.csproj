@@ -96,6 +96,10 @@
       <Project>{fee010b8-770c-48ca-9df0-e3664cca4ad4}</Project>
       <Name>ServiceLayer</Name>
     </ProjectReference>
+    <ProjectReference Include="..\SharedLayer\SharedLayer.csproj">
+      <Project>{58b9266a-14ee-4bae-8139-2d5bb773c28e}</Project>
+      <Name>SharedLayer</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Forms\frmViewer.resx">

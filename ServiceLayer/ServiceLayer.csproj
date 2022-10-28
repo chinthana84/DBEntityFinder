@@ -53,6 +53,10 @@
       <Project>{fe44ffeb-d597-4763-b855-aaf06acb277d}</Project>
       <Name>DataAccessLayer</Name>
     </ProjectReference>
+    <ProjectReference Include="..\SharedLayer\SharedLayer.csproj">
+      <Project>{58b9266a-14ee-4bae-8139-2d5bb773c28e}</Project>
+      <Name>SharedLayer</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
