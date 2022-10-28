@@ -1,9 +1,12 @@
 ﻿using SharedLayer;
+using System.Data;
 
 namespace ServiceLayer.Interfaces
 {
     public interface IStoredProcedureService
     {
-        string GetStoredProcedure(string procName, AppKeyObject connection);
+        DataTable GetStoredProcedure(string procName, AppKeyObject connection);
+
+        DataTable ExecuteQuery(string query, AppKeyObject appKeyObject);
     }
 }

@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
     <Metadata>
-        <Identity Id="VSIXProject2.50ce00b7-9d11-4481-a2d9-201374e5e5c5" Version="1.5" Language="en-US" Publisher="ChinthanaGunasekaraEXT" />
-        <DisplayName>VSIXProject2</DisplayName>
-        <Description xml:space="preserve">Empty VSIX Project.</Description>
+        <Identity Id="VSIXProject2.50ce00b7-9d11-4481-a2d9-201374e5e5c5" Version="2.0" Language="en-US" Publisher="ChinthanaGunasekaraEXT" />
+        <DisplayName>AddOn for find database object</DisplayName>
+        <Description xml:space="preserve">Empty VSIX Project.
+
+ &lt;findObjectVX&gt;
+      &lt;add key = "FINDSPKEY.NET.ADDON" value = "Data Source=.;DATABASE=UTP_WMS_01_28;User Id=sa; Password=112;" dbType = "SQLSERVER" /&gt;
+                &lt;/findObjectVX&gt;
+</Description>
     </Metadata>
     <Installation>
         <InstallationTarget Id="Microsoft.VisualStudio.Community" Version="[16.0, 17.0)" />

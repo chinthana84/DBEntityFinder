@@ -11,6 +11,7 @@ using SharedLayer;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.Design;
+using System.Data;
 using System.Globalization;
 using System.IO;
 using System.Linq;
@@ -81,7 +82,7 @@ namespace VSIXProject2
             }
         }
 
- 
+
 
         /// <summary>
         /// Initializes the singleton instance of the command.
@@ -104,104 +105,84 @@ namespace VSIXProject2
         /// </summary>
         /// <param name="sender">Event sender.</param>
         /// <param name="e">Event args.</param>
-        private async  void Execute(object sender, EventArgs e)
+        private async void Execute(object sender, EventArgs e)
         {
             //ThreadHelper.ThrowIfNotOnUIThread();
-            string message = string.Format(CultureInfo.CurrentCulture, "Inside {0}.MenuItemCallback()", this.GetType().FullName);
-            string title = "Command1Test";
-
-
-
             DTE dte = Package.GetGlobalService(typeof(SDTE)) as DTE;
-           
- 
+
             try
             {
+                bool isFound = false;
+                AppKeyObject appKeyObject = null;
+                List<string> allFiles = new List<string>();
 
                 IVsSolution solution = (IVsSolution)Microsoft.VisualStudio.Shell.Package.GetGlobalService(typeof(IVsSolution));
                 solution.GetSolutionInfo(out string solutionDirectory, out string solutionName, out string solutionDirectory2);
-                var solutionPath = solutionDirectory + System.IO.Path.GetFileNameWithoutExtension(solutionName);
+                var solutionPath = solutionDirectory;// + System.IO.Path.GetFileNameWithoutExtension(solutionName);
 
-                Dictionary<string, string> dic = new Dictionary<string, string>();
-
-
-                //                < findObjectVX >
-
-                //        < add key = "FINDSPKEY.NET.ADDON"
-
-                //             value = "Data Source=.;DATABASE=UTP_WMS_01_28;User Id=sa; Password=112;"
-
-                //             dbType = "SQLSERVER" />
-
-
-                //</ findObjectVX >
-
-                AppKeyObject appKeyObject=null;
-                foreach (string file in Directory.EnumerateFiles(solutionPath, "app.config"))
+                allFiles.AddRange( Directory.GetFiles(solutionPath, "web.config", SearchOption.AllDirectories));
+                allFiles.AddRange(Directory.GetFiles(solutionPath, "app.config", SearchOption.AllDirectories));
+;
+                foreach (var file in allFiles)
                 {
+                    if (isFound) break;
                     string contents = File.ReadAllText(file);
-
-
                     var xml = XElement.Parse(contents);
-
-                    foreach (var item in xml.Element("findObjectVX").Descendants("add"))
+                    try
                     {
-                        if(item.Attribute("key").Value== "FINDSPKEY.NET.ADDON")
+                        if (xml.Element("findObjectVX") != null)
                         {
-                            appKeyObject = new AppKeyObject();
-                            appKeyObject.Key = item.Attribute("key").Value;
-                            appKeyObject.Value = item.Attribute("value").Value;
-                            appKeyObject.dbType = item.Attribute("dbType").Value;
-                            break;
+                            foreach (var item in xml.Element("findObjectVX").Descendants("add"))
+                            {
+                                if (item.Attribute("key").Value == "FINDSPKEY.NET.ADDON")
+                                {
+                                    appKeyObject = new AppKeyObject();
+                                    appKeyObject.Key = item.Attribute("key").Value;
+                                    appKeyObject.Value = item.Attribute("value").Value;
+                                    appKeyObject.dbType = item.Attribute("dbType").Value;
+                                    break;
+                                }
+                            }
                         }
                     }
-
- 
+                    catch (Exception) {}
                 }
-
                 if (appKeyObject == null)
                 {
                     throw new ApplicationException("Keynot found");
                 }
 
-                 string selection = await GetSelection(ServiceProvider);
+                string selection = await GetSelection(ServiceProvider);
                 if (string.IsNullOrEmpty(selection))
                 {
                     return;
                 }
 
                 IStoredProcedureService i = new StoredProcedureService(appKeyObject.dbType);
-                string s = i.GetStoredProcedure(selection, appKeyObject);
-                if (s != "")
+                DataTable dataTable= i.GetStoredProcedure(selection, appKeyObject);
+                if (dataTable.Rows.Count ==1)
                 {
-                    frmViewer frmViewer = new frmViewer();
-                    frmViewer.richTextBox1.Text = s;
+                    frmViewer frmViewer = new frmViewer(appKeyObject);
+                    frmViewer.richTextBox1.Text = dataTable.Rows[0]["text"].ToString() ;
                     frmViewer.Text = appKeyObject.Value + " " + appKeyObject.dbType;
                     frmViewer.ShowDialog();
+                }
+                else if(dataTable.Rows.Count > 1)
+                {
+                    MessageBox.Show($"multiple objects found in same name");
+                }
+                else
+                {
+                    MessageBox.Show($"{ selection}  object not found");
                 }
             }
             catch (Exception ex)
             {
-
                 MessageBox.Show(ex.Message);
             }
-            // Show a message box to prove we were here
-            //VsShellUtilities.ShowMessageBox(
-            //    this.package,
-            //    message + c.MyProperty,
-            //    title,
-            //    OLEMSGICON.OLEMSGICON_INFO,
-            //    OLEMSGBUTTON.OLEMSGBUTTON_OK,
-            //    OLEMSGDEFBUTTON.OLEMSGDEFBUTTON_FIRST);
-
-
         }
-
-     
-
         private async Task<string> GetSelection(Microsoft.VisualStudio.Shell.IAsyncServiceProvider serviceProvider)
         {
-           
             var service = await serviceProvider.GetServiceAsync(typeof(SVsTextManager));
             var textManager = service as IVsTextManager2;
             IVsTextView view;
@@ -215,8 +196,6 @@ namespace VSIXProject2
 
             TextViewSelection selection = new TextViewSelection(start, end, selectedText);
             return selection.Text;
-
-        
         }
     }
 }

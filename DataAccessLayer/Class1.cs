@@ -47,7 +47,7 @@ namespace DataAccessLayer
         protected IDB _idb;
         string query = "";
 
-        public string GetStoredProcedure(string procName, AppKeyObject con)
+        public DataTable GetStoredProcedure(string procName, AppKeyObject con)
         {
             query= $@"SELECT s.text, NAME AS ObjectName
 	                        ,schema_name(o.schema_id) AS SchemaName
@@ -61,15 +61,15 @@ namespace DataAccessLayer
                         ORDER BY o.NAME";
            DataTable dt= GetDataTable(query,con);
             if (dt.Rows.Count > 0)
-                return dt.Rows[0][0].ToString() ;
+                return dt ;
             else
-                return "";
+                return new DataTable(); 
         }
     }
 
     public interface IStoredProcedure
     {
-        string GetStoredProcedure(string procName, AppKeyObject con);
+        DataTable GetStoredProcedure(string procName, AppKeyObject con);
     }
 
 }
