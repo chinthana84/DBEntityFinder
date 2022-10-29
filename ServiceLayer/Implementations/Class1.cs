@@ -10,37 +10,24 @@ using System.Threading.Tasks;
 
 namespace ServiceLayer.Implementations
 {
-    class Class1
+ 
+    public class DBService : IDBTypeService
     {
-    }
-
-    public class StoredProcedureService : IStoredProcedureService
-    {
-        protected IStoredProcedure _idb;
-        protected IDB _db;
-        public StoredProcedureService(string db)
+        protected IDB dB;
+        public AppKeyObject appKeyObject { get; set; }
+        public DBService(AppKeyObject appKeyObject)
         {
-            if (db.ToUpper() == dbType.SqlServer.ToString().ToUpper())
-            {
-                this._idb = new SQLStoredProcedure();
-                this._db = new SQLServer();
-            }
-            else
-            {
-                throw new ApplicationException("app key db type not found");
-            }
-          
+            this.appKeyObject = appKeyObject;
+            dB = Creator.GetDBTypeObject(appKeyObject.dbType);
+        }
+        public DataTable GetResults(string query)
+        {
+            return this.dB.GetDataTable(query, this.appKeyObject);
         }
 
-        public DataTable ExecuteQuery(string query, AppKeyObject appKeyObject)
+        public DataTable GetDBObject(string procName )
         {
-            return this._db.GetDataTable(query, appKeyObject);
-        }
-
-        public DataTable GetStoredProcedure(string procName, AppKeyObject connection)
-        {
-
-            return this._idb.GetStoredProcedure(procName, connection);
+            return this.dB.GetObjectByName(procName, this.appKeyObject);
         }
     }
 }

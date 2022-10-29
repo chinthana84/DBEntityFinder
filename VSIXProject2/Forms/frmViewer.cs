@@ -31,8 +31,7 @@ namespace VSIXProject2.Forms
                 {
                     return;
                 }
-                IStoredProcedureService i = new StoredProcedureService(appKeyObject.dbType);
-                DataTable dataTable = i.ExecuteQuery(selection, appKeyObject);
+                DataTable dataTable = new DBService(appKeyObject).GetResults(selection);
                 dataGridView1.DataSource = dataTable;
             }
             catch (Exception ex)

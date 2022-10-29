@@ -15,21 +15,30 @@ namespace DataAccessLayer
 
     public interface IDB
     {
-        string GetString(string s);
+        DataTable GetObjectByName(string procName, AppKeyObject con);
         DataTable GetDataTable(string query, AppKeyObject con);
-         
     }
 
-    public class SQLServer : IDB
-    {
-        private string GetConnectionString()
+    public class SQLServerDB : IDB
+    { 
+        string query="";
+        public DataTable GetObjectByName(string procName, AppKeyObject con)
         {
-            throw new NotImplementedException();
-        }
-
-        public string GetString(string s)
-        {
-            throw new NotImplementedException();
+            query = $@"SELECT s.text, NAME AS ObjectName
+	                        ,schema_name(o.schema_id) AS SchemaName
+	                        ,type
+	                        ,o.type_desc
+	                        
+                        FROM sys.objects o
+                        inner join  syscomments s on o.object_id=s.id
+                        WHERE o.is_ms_shipped = 0
+                         AND o.NAME ='{procName}'
+                        ORDER BY o.NAME";
+            DataTable dt = GetDataTable(query, con);
+            if (dt.Rows.Count > 0)
+                return dt;
+            else
+                return new DataTable();
         }
 
         public DataTable GetDataTable(string query, AppKeyObject con)
@@ -42,34 +51,18 @@ namespace DataAccessLayer
         }
     }
 
-    public class SQLStoredProcedure : SQLServer, IStoredProcedure
+    public class Creator
     {
-        protected IDB _idb;
-        string query = "";
-
-        public DataTable GetStoredProcedure(string procName, AppKeyObject con)
+        public static IDB GetDBTypeObject(string key)
         {
-            query= $@"SELECT s.text, NAME AS ObjectName
-	                        ,schema_name(o.schema_id) AS SchemaName
-	                        ,type
-	                        ,o.type_desc
-	                        
-                        FROM sys.objects o
-                        inner join  syscomments s on o.object_id=s.id
-                        WHERE o.is_ms_shipped = 0
-                         AND o.NAME ='{procName}'
-                        ORDER BY o.NAME";
-           DataTable dt= GetDataTable(query,con);
-            if (dt.Rows.Count > 0)
-                return dt ;
+            if(key.ToUpper().Trim()== dbType.SqlServer.ToString().ToUpper())
+            {
+                return new SQLServerDB();
+            }
             else
-                return new DataTable(); 
+            {
+                throw new Exception("Incorrect Database key in config");
+            }
         }
     }
-
-    public interface IStoredProcedure
-    {
-        DataTable GetStoredProcedure(string procName, AppKeyObject con);
-    }
-
 }

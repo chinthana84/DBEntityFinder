@@ -3,10 +3,10 @@ using System.Data;
 
 namespace ServiceLayer.Interfaces
 {
-    public interface IStoredProcedureService
+    public interface IDBTypeService
     {
-        DataTable GetStoredProcedure(string procName, AppKeyObject connection);
+        DataTable GetDBObject(string procName);
 
-        DataTable ExecuteQuery(string query, AppKeyObject appKeyObject);
+        DataTable GetResults(string query);
     }
 }

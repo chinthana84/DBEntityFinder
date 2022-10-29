@@ -112,41 +112,9 @@ namespace VSIXProject2
 
             try
             {
-                bool isFound = false;
+                
                 AppKeyObject appKeyObject = null;
-                List<string> allFiles = new List<string>();
-
-                IVsSolution solution = (IVsSolution)Microsoft.VisualStudio.Shell.Package.GetGlobalService(typeof(IVsSolution));
-                solution.GetSolutionInfo(out string solutionDirectory, out string solutionName, out string solutionDirectory2);
-                var solutionPath = solutionDirectory;// + System.IO.Path.GetFileNameWithoutExtension(solutionName);
-
-                allFiles.AddRange( Directory.GetFiles(solutionPath, "web.config", SearchOption.AllDirectories));
-                allFiles.AddRange(Directory.GetFiles(solutionPath, "app.config", SearchOption.AllDirectories));
-;
-                foreach (var file in allFiles)
-                {
-                    if (isFound) break;
-                    string contents = File.ReadAllText(file);
-                    var xml = XElement.Parse(contents);
-                    try
-                    {
-                        if (xml.Element("findObjectVX") != null)
-                        {
-                            foreach (var item in xml.Element("findObjectVX").Descendants("add"))
-                            {
-                                if (item.Attribute("key").Value == "FINDSPKEY.NET.ADDON")
-                                {
-                                    appKeyObject = new AppKeyObject();
-                                    appKeyObject.Key = item.Attribute("key").Value;
-                                    appKeyObject.Value = item.Attribute("value").Value;
-                                    appKeyObject.dbType = item.Attribute("dbType").Value;
-                                    break;
-                                }
-                            }
-                        }
-                    }
-                    catch (Exception) {}
-                }
+                appKeyObject = GetAppKeyObject();
                 if (appKeyObject == null)
                 {
                     throw new ApplicationException("Keynot found");
@@ -158,16 +126,16 @@ namespace VSIXProject2
                     return;
                 }
 
-                IStoredProcedureService i = new StoredProcedureService(appKeyObject.dbType);
-                DataTable dataTable= i.GetStoredProcedure(selection, appKeyObject);
-                if (dataTable.Rows.Count ==1)
+                DataTable dataTable = new DBService(appKeyObject).GetDBObject(selection);
+               
+                if (dataTable.Rows.Count == 1)
                 {
                     frmViewer frmViewer = new frmViewer(appKeyObject);
-                    frmViewer.richTextBox1.Text = dataTable.Rows[0]["text"].ToString() ;
+                    frmViewer.richTextBox1.Text = dataTable.Rows[0]["text"].ToString();
                     frmViewer.Text = appKeyObject.Value + " " + appKeyObject.dbType;
                     frmViewer.ShowDialog();
                 }
-                else if(dataTable.Rows.Count > 1)
+                else if (dataTable.Rows.Count > 1)
                 {
                     MessageBox.Show($"multiple objects found in same name");
                 }
@@ -181,6 +149,48 @@ namespace VSIXProject2
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private   AppKeyObject GetAppKeyObject()
+        {
+            List<string> allFiles = new List<string>();
+            bool isFound = false;
+            AppKeyObject appKeyObject = null;
+
+            IVsSolution solution = (IVsSolution)Microsoft.VisualStudio.Shell.Package.GetGlobalService(typeof(IVsSolution));
+            solution.GetSolutionInfo(out string solutionDirectory, out string solutionName, out string solutionDirectory2);
+            var solutionPath = solutionDirectory;// + System.IO.Path.GetFileNameWithoutExtension(solutionName);
+
+            allFiles.AddRange(Directory.GetFiles(solutionPath, "web.config", SearchOption.AllDirectories));
+            allFiles.AddRange(Directory.GetFiles(solutionPath, "app.config", SearchOption.AllDirectories));
+
+            foreach (var file in allFiles)
+            {
+                if (isFound) break;
+                string contents = File.ReadAllText(file);
+                var xml = XElement.Parse(contents);
+                try
+                {
+                    if (xml.Element("findObjectVX") != null)
+                    {
+                        foreach (var item in xml.Element("findObjectVX").Descendants("add"))
+                        {
+                            if (item.Attribute("key").Value == "FINDSPKEY.NET.ADDON")
+                            {
+                                appKeyObject = new AppKeyObject();
+                                appKeyObject.Key = item.Attribute("key").Value;
+                                appKeyObject.Value = item.Attribute("value").Value;
+                                appKeyObject.dbType = item.Attribute("dbType").Value;
+                                break;
+                            }
+                        }
+                    }
+                }
+                catch (Exception) { }
+            }
+
+            return appKeyObject;
+        }
+
         private async Task<string> GetSelection(Microsoft.VisualStudio.Shell.IAsyncServiceProvider serviceProvider)
         {
             var service = await serviceProvider.GetServiceAsync(typeof(SVsTextManager));
