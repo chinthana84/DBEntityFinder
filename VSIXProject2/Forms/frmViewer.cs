@@ -27,6 +27,10 @@ namespace VSIXProject2.Forms
             try
             {
                 string selection = richTextBox1.SelectedText;
+                if (string.IsNullOrEmpty(selection))
+                {
+                    return;
+                }
                 IStoredProcedureService i = new StoredProcedureService(appKeyObject.dbType);
                 DataTable dataTable = i.ExecuteQuery(selection, appKeyObject);
                 dataGridView1.DataSource = dataTable;
