@@ -174,9 +174,9 @@ namespace VSIXProject2
                 var xml = XElement.Parse(contents);
                 try
                 {
-                    if (xml.Element("findObjectVX") != null)
+                    if (xml.Element("runtime")?.Descendants("findObjectVX") != null)
                     {
-                        foreach (var item in xml.Element("findObjectVX").Descendants("add"))
+                        foreach (var item in xml.Element("runtime").Descendants("findObjectVX"))
                         {
                             if (item.Attribute("key").Value == "FINDSPKEY.NET.ADDON")
                             {
