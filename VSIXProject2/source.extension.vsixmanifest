@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
     <Metadata>
-        <Identity Id="VSIXProject2.50ce00b7-9d11-4481-a2d9-201374e5e5c5" Version="4.1" Language="en-US" Publisher="ChinthanaGunasekaraEXT" />
+        <Identity Id="VSIXProject2.50ce00b7-9d11-4481-a2d9-201374e5e5c5" Version="4.2" Language="en-US" Publisher="ChinthanaGunasekaraEXT" />
         <DisplayName>Add-In for find SQL database object</DisplayName>
         <Description xml:space="preserve">Find SQL objects form .net
 

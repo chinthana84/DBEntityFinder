@@ -132,6 +132,8 @@ namespace VSIXProject2
                 {
                     frmViewer frmViewer = new frmViewer(appKeyObject);
                     frmViewer.richTextBox1.Text = dataTable.Rows[0]["text"].ToString();
+                    //frmViewer.richTextBox1.SelectAll();
+                    frmViewer.sysntaxHighli();
                     frmViewer.Text = appKeyObject.Value + " " + appKeyObject.dbType;
                     frmViewer.ShowDialog();
                 }
@@ -149,6 +151,8 @@ namespace VSIXProject2
                 MessageBox.Show(ex.Message);
             }
         }
+
+        
 
         private   AppKeyObject GetAppKeyObject()
         {
