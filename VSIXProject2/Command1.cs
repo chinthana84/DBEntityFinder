@@ -131,7 +131,7 @@ namespace VSIXProject2
                 if (dataTable.Rows.Count == 1)
                 {
                     frmViewer frmViewer = new frmViewer(appKeyObject);
-                    frmViewer.richTextBox1.Text = dataTable.Rows[0]["text"].ToString();
+                    frmViewer.richTextBox1.Text = dataTable.Rows[0][0].ToString();
                     //frmViewer.richTextBox1.SelectAll();
                     frmViewer.sysntaxHighli();
                     frmViewer.Text = appKeyObject.Value + " " + appKeyObject.dbType;

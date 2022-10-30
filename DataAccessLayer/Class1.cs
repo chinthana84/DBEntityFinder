@@ -34,9 +34,39 @@ namespace DataAccessLayer
                         WHERE o.is_ms_shipped = 0
                          AND o.NAME ='{procName}'
                         ORDER BY o.NAME";
+            query = $@"
+                    SELECT db_name() AS the__database
+				                    , OBJECT_SCHEMA_NAME(O.object_id) AS the__schema
+				                    , O.name AS object__name 
+				                    , O.type_desc AS object__type
+				                    , O.is_ms_shipped
+				                    , M.definition AS   b
+				                    ,O.object_id
+		                    FROM sys.objects O WITH(NOLOCK)
+			                    LEFT JOIN sys.sql_modules M ON O.object_id = M.object_id
+		                    WHERE O.name='{procName}' ";
+
             DataTable dt = GetDataTable(query, con);
-            if (dt.Rows.Count > 0)
+
+            if (dt.Rows.Count > 1)
+            {
                 return dt;
+            }
+            else if (dt.Rows.Count == 1)
+            {
+        
+                DataTable dt2 = GetDataTable($@"		declare @s as nvarchar(max);
+		                                set @s=	(	SELECT 1 AS [Tag], 0 AS [Parent], NCHAR(13) + NCHAR(10) +
+                                       OBJECT_DEFINITION({dt.Rows[0]["object_id"]}) AS [Code!1!!CDATA]
+                                FOR XML EXPLICIT)
+                                select replace(replace(@s, '<Code><![CDATA[',''),']]></Code>','')", con);
+
+          
+
+                //.Replace("<Code><![CDATA[", "").Replace("]]></Code>", "")
+
+                return dt2;
+            }
             else
                 return new DataTable();
         }
