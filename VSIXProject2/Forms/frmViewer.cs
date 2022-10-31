@@ -22,6 +22,7 @@ namespace VSIXProject2.Forms
         {
             InitializeComponent();
             this.appKeyObject = t;
+ 
 
         }
 
