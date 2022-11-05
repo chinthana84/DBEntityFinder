@@ -6,8 +6,10 @@ using System.Threading.Tasks;
 
 namespace SharedLayer
 {
-    public class Class1
+    public class Shared
     {
+        public static AppKeyObject AppKeyObject;
+        public static string SearchDefinition;
     }
 
     public enum dbType

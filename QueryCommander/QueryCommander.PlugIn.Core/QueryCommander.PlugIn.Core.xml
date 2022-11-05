@@ -1,0 +1,165 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>QueryCommander.PlugIn.Core</name>
+    </assembly>
+    <members>
+        <member name="T:QueryCommander.PlugIn.Core.CallContext">
+            <summary>
+            CallContext encapsulates QueryCommander properties.
+            </summary>
+        </member>
+        <member name="M:QueryCommander.PlugIn.Core.CallContext.#ctor(System.Data.IDbConnection,System.String,System.Data.DataSet)">
+            <summary>
+            Only used by QueryCommander
+            </summary>
+            <param name="dbConnection">Active QueryCommander SqlConnection</param>
+            <param name="queryWindowContext">Content of the current query window</param>
+            <param name="resultDataSet">Only set using the IPlugin_OnAfterQueryExecution1 interface</param>
+        </member>
+        <member name="P:QueryCommander.PlugIn.Core.CallContext.DbConnection">
+            <summary>
+            Active QueryCommander SqlConnection
+            </summary>
+        </member>
+        <member name="P:QueryCommander.PlugIn.Core.CallContext.QueryWindowContext">
+            <summary>
+            Content of the current query window
+            </summary>
+        </member>
+        <member name="P:QueryCommander.PlugIn.Core.CallContext.ResultDataSet">
+            <summary>
+            Only set using the IPlugin_OnAfterQueryExecution1 interface
+            </summary>
+        </member>
+        <member name="T:QueryCommander.PlugIn.Core.Common">
+            <summary>
+            Summary description for Common.
+            </summary>
+        </member>
+        <member name="T:QueryCommander.PlugIn.Core.Common.ExecutionTypes">
+            <summary>
+            ExecutionType instructs QueryCommander what to do with the result. 
+            None					= Executing this plugin will have no effect on QueryCommander.
+            InsertAtPoint			= The return of this plugin (Execute) is ment to be inserted at the current cursor posistion.  			
+            InsertToNewQueryWindow	= The return of this plugin (Execute) is ment to be inserted into a new query window.
+            ReplaceToQueryWindow	= The return of this plugin (Execute) is ment to replace the content in the active query window. 
+            </summary>
+        </member>
+        <member name="F:QueryCommander.PlugIn.Core.Common.ExecutionTypes.None">
+            <summary>
+            Executing this plugin will have no effect on QueryCommander.
+            </summary>
+        </member>
+        <member name="F:QueryCommander.PlugIn.Core.Common.ExecutionTypes.InsertAtPoint">
+            <summary>
+            The return of this plugin (Execute) is ment to be inserted at the current cursor posistion.
+            </summary>
+        </member>
+        <member name="F:QueryCommander.PlugIn.Core.Common.ExecutionTypes.InsertToNewQueryWindow">
+            <summary>
+            The return of this plugin (Execute) is ment to be inserted into a new query window.
+            </summary>
+        </member>
+        <member name="F:QueryCommander.PlugIn.Core.Common.ExecutionTypes.ReplaceToQueryWindow">
+            <summary>
+            The return of this plugin (Execute) is ment to replace the content in the active query window. 
+            </summary>
+        </member>
+        <member name="T:QueryCommander.PlugIn.Core.Common.TriggerTypes">
+            <summary>
+            Only used by QueryCommander
+            </summary>
+        </member>
+        <member name="F:QueryCommander.PlugIn.Core.Common.TriggerTypes.OnMenuClick">
+            <summary>
+            Only used by QueryCommander
+            </summary>
+        </member>
+        <member name="F:QueryCommander.PlugIn.Core.Common.TriggerTypes.OnBeforeQueryExecution">
+            <summary>
+            Only used by QueryCommander
+            </summary>
+        </member>
+        <member name="F:QueryCommander.PlugIn.Core.Common.TriggerTypes.OnAfterQueryExecution">
+            <summary>
+            Only used by QueryCommander
+            </summary>
+        </member>
+        <member name="T:QueryCommander.PlugIn.Core.Interfaces.IPlugin_OnAfterQueryExecution1">
+            <summary>
+            Summary description for IPlugin_OnAfterQueryExecution1.
+            </summary>
+        </member>
+        <member name="P:QueryCommander.PlugIn.Core.Interfaces.IPlugin_OnAfterQueryExecution1.ExecutionType">
+            <summary>
+            ExecutionType instructs QueryCommander what to do with the result. 
+            None					= Executing this plugin will have no effect on QueryCommander.
+            InsertAtPoint			= The return of this plugin (Execute) is ment to be inserted at the current cursor posistion.  			
+            InsertToNewQueryWindow	= The return of this plugin (Execute) is ment to be inserted into a new query window.
+            ReplaceToQueryWindow	= The return of this plugin (Execute) is ment to replace the content in the active query window. 
+            </summary>
+        </member>
+        <member name="M:QueryCommander.PlugIn.Core.Interfaces.IPlugin_OnAfterQueryExecution1.Execute(QueryCommander.PlugIn.Core.CallContext,System.IntPtr,System.Collections.Hashtable)">
+            <summary>
+            This is the method called upon from QueryCommander
+            </summary>
+            <param name="callcontext"></param>
+            <param name="handle"></param>
+            <param name="plugInVariables"></param>
+            <returns></returns>
+        </member>
+        <member name="T:QueryCommander.PlugIn.Core.Interfaces.IPlugin_OnBeforeQueryExecution1">
+            <summary>
+            Summary description for IPlugin_OnBeforeQueryExecution1.
+            </summary>
+        </member>
+        <member name="P:QueryCommander.PlugIn.Core.Interfaces.IPlugin_OnBeforeQueryExecution1.ExecutionType">
+            <summary>
+            ExecutionType instructs QueryCommander what to do with the result. 
+            None					= Executing this plugin will have no effect on QueryCommander.
+            InsertAtPoint			= The return of this plugin (Execute) is ment to be inserted at the current cursor posistion.  			
+            InsertToNewQueryWindow	= The return of this plugin (Execute) is ment to be inserted into a new query window.
+            ReplaceToQueryWindow	= The return of this plugin (Execute) is ment to replace the content in the active query window. 
+            </summary>
+        </member>
+        <member name="M:QueryCommander.PlugIn.Core.Interfaces.IPlugin_OnBeforeQueryExecution1.Execute(QueryCommander.PlugIn.Core.CallContext,System.IntPtr,System.Collections.Hashtable)">
+            <summary>
+            This is the method called upon from QueryCommander
+            </summary>
+            <param name="callcontext"></param>
+            <param name="handle"></param>
+            <param name="plugInVariables"></param>
+            <returns></returns>
+        </member>
+        <member name="T:QueryCommander.PlugIn.Core.Interfaces.IPlugin_OnMenuClick1">
+            <summary>
+            Summary description for IPlugin_OnMenuClick1.
+            </summary>
+        </member>
+        <member name="P:QueryCommander.PlugIn.Core.Interfaces.IPlugin_OnMenuClick1.ExecutionType">
+            <summary>
+            ExecutionType instructs QueryCommander what to do with the result. 
+            None					= Executing this plugin will have no effect on QueryCommander.
+            InsertAtPoint			= The return of this plugin (Execute) is ment to be inserted at the current cursor posistion.  			
+            InsertToNewQueryWindow	= The return of this plugin (Execute) is ment to be inserted into a new query window.
+            ReplaceToQueryWindow	= The return of this plugin (Execute) is ment to replace the content in the active query window. 
+            </summary>
+        </member>
+        <member name="P:QueryCommander.PlugIn.Core.Interfaces.IPlugin_OnMenuClick1.MenuItem">
+            <summary>
+            If TriggerType==OnMenuClick this is the caption of the menu item
+            </summary>
+        </member>
+        <member name="M:QueryCommander.PlugIn.Core.Interfaces.IPlugin_OnMenuClick1.Execute(QueryCommander.PlugIn.Core.CallContext,System.IntPtr,System.Collections.Hashtable,System.Windows.Forms.MenuItem)">
+            <summary>
+            This is the method called upon from QueryCommander
+            </summary>
+            <param name="callcontext"></param>
+            <param name="handle"></param>
+            <param name="plugInVariables"></param>
+            <param name="menuItem">Current menu item</param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

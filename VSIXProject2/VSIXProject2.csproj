@@ -96,6 +96,10 @@
     <Content Include="Resources\Command1.png" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\QueryCommander\QueryCommander.csproj">
+      <Project>{0A386EC6-40E1-4C5A-BA6B-B483FE89E8E7}</Project>
+      <Name>QueryCommander</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ServiceLayer\ServiceLayer.csproj">
       <Project>{fee010b8-770c-48ca-9df0-e3664cca4ad4}</Project>
       <Name>ServiceLayer</Name>

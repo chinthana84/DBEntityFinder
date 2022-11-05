@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type='text/xsl' href='startpage.xsl'?>
+<querycommander>
+	<version current="" latest="0.9.9.7" url="http://www.querycommander.com/setup.zip" deploymentdate="2004-03-09">
+		<summary/>
+		<features/>
+		<resolvedbugs/>
+		<knownbugs/>
+	</version>
+	<features>
+		<feature name="table intellisense" desc="ctrl+c"/>
+		<feature name="column intellisense" desc="."/>
+	</features>
+	<knownbugs>
+		<bug name="ALT+X" desc="Alt+X seems to live a life of it's own"/>
+		<bug name ="Colors" desc="Colors sux"/>
+	</knownbugs>
+	<statement/>
+</querycommander>

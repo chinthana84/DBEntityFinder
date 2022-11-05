@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONNECTIONS>
+	<CONNECTION name="Localhost" string="Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=GOLFIT_TV_1;Data Source=localhost"/>
+	<CONNECTION name="GOLFITUTV01" string="Provider=SQLOLEDB.1;User Id=sa;Password=685MIL87;Data Source=GOLFITUTV01"/>
+</CONNECTIONS>

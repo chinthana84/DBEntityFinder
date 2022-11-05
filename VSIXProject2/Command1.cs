@@ -4,6 +4,7 @@ using EnvDTE;
 using Microsoft.VisualStudio.Shell;
 using Microsoft.VisualStudio.Shell.Interop;
 using Microsoft.VisualStudio.TextManager.Interop;
+using QueryCommander;
 using ServiceLayer;
 using ServiceLayer.Implementations;
 using ServiceLayer.Interfaces;
@@ -130,6 +131,11 @@ namespace VSIXProject2
                
                 if (dataTable.Rows.Count == 1)
                 {
+                    Shared.SearchDefinition = dataTable.Rows[0][0].ToString();
+                    Shared.AppKeyObject = appKeyObject;
+                    MainForm mainForm = new MainForm("");
+                    mainForm.ShowDialog();
+
                     frmViewer frmViewer = new frmViewer(appKeyObject);
                     frmViewer.richTextBox1.Text = dataTable.Rows[0][0].ToString();
                     //frmViewer.richTextBox1.SelectAll();

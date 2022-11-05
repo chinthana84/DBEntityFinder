@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 1.3
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">1.3</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1">this is my long string</data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        [base64 mime encoded serialized .NET Framework object]
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        [base64 mime encoded string representing a byte array form of the .NET Framework object]
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used forserialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>1.3</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="imglDataObjects.Modifiers" type="System.CodeDom.MemberAttributes, System, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>Private</value>
+  </data>
+  <data name="imglDataObjects.DefaultModifiers" type="System.CodeDom.MemberAttributes, System, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>Private</value>
+  </data>
+  <data name="imglDataObjects.Location" type="System.Drawing.Point, System.Drawing, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </data>
+  <data name="imglDataObjects.ImageStream" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>
+        AAEAAAD/////AQAAAAAAAAAMAgAAAFpTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj0xLjAuNTAw
+        MC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZT
+        eXN0ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMA
+        AAB+CwAAAk1TRnQBSQFMAgEBAwEAAQQBAAEEAQABEAEAARABAAT/ARkBEAj/AUIBTQE2BwABNgMAASgD
+        AAFAAwABEAMAAQEBAAEYBgABDBIAAf8B/gH/A/wBwwKpAcEBsQGyAcoBuwG5Ac4BsQG0AcEBogGhAeUB
+        0wHUA/gB/Qb/Av4J/wH9Av8CMgGYATMBJwFXATMBJwFXATMBJwFXATMBJwFXATMBJwFXATMBJwFXAWoB
+        XAGWAWIBSQF4ATMBJwFXATMBJwFXATMBJwFXATMBJwFXATMBJwFXARwBFgFYAsAB1QP6A+UD1APLA8cD
+        xgHOAsQBxwLFA8sD1QPfA+kD9AP7A/4D/zAAAfAB7gHtAdMBvgHBAeIB5gHnAeEC3wHZAdUB1AHBAawB
+        qgGpAYEBggHEAZ4BnAG4AZEBjwH/Af0B/AH9Bf8B/Qv/AjIBmAHbAcIBrQHbAcIBrQHbAcIBrQHbAcIB
+        rQHbAcIBrQHXAbsBpAHCAZEBZAHTAbUBnAHbAcIBrQHbAcIBrQHbAcIBrQHbAcIBrQHbAcIBrQFuAWEB
+        iQK/AdgD+QNaA0YDRwM7AycBowIZATECGgNNA6QDzAPfA+sD9AP7A/8wAAHIAbEBrwHqAegB7gH2AfUB
+        9wHuAe0B8QHeAeMB4gHIAaYBpwGmAoABrQGCAX8B1wGuAawB0wG+AcAB/wH+Af8B+AL2A/8B/QX/Af0C
+        /wIyAZgB7AHlAeMBtwGaAZMBtwGaAZMBtwGaAZMBtwGaAZMB0wG/AbgBwwGaAXsB7gHkAdwB7AHlAeMB
+        twGaAZMBtwGaAZMBtwGaAZMByQGzAa4CfwGyAr8B2AP5A24C2QHaAtsB3ALRAdIDwQG1AbYBtQOKAz4D
+        XQOgA80D4APrA/YD/TAAAeUB2AHWAusB5QH5AfIB7wHuAfMB/AHpAt8B1QGoAaQBtQFyAXUBwQFxAXAB
+        0QGrAakB7wHgAd4B0AG1AbgByQGoAawBrQGgAaIB2AHQAdEG/wIyAZgP/gH2AfEB7QG/AZUBdgGJAZQB
+        lgEqAi0BxAHJAcoJ/gJ/AbICvwHYA/kDcQLmAecC6AHpAt8B4APSA74DqANSA4gDcgOlA80D4gPwA/sw
+        AAH9Av8B8gHqAesBwwGGAXwBwgGSAZEBzwGqAawBxAF8AYIByQFqAWcBxwJlAcoBqwGuAdwBwQHFAd8B
+        ugG8AcwBqgGrAbMBoAGdAa4BnQGgAaYBlAGJAf8B+wH8AjIBmAH4AfYB9QHmAd0B2gHmAd0B2gHmAd0B
+        2gHlAd4B3QGmAasBrAE9ATkBMwFDAT0BNwGNAYcBfAF0AXABbwHkAdsB2AHmAd0B2gHsAeUB4wJ/AbIC
+        vwHYA/kDdQbuA+gB2QHaAdkDxwOsA2UDpQOVA38DqgPVA+wD+jAAAf0B/wH+AfsC/QHUAZEBRgH3AacB
+        FAH8Aa8BNQHeAZwBcwHAAWEBbwGsAVgBUwHcAdIBywHOAaMBpgHWAacBqQHLAqkBqgGCAYMBpQF2AXgC
+        nwGRAf4C/AIyAZgB8gHuAewBzwG7AbcBzwG7AbcBzwG7AbcBtQGoAaUCaAFjAZ4BgAFiAfEB1wG9AcMB
+        vQGzASwBJgEjAYsBeAF0Ac8BuwG3AdsBzAHJAn8BsgK/AdgD+QN5A/QC8AHxA+sD3wPOA7UDdQOdA5MD
+        bwN1A8ED6wP5MAAD/wHlAd4B2wHtAaQBPAH7AbYBMQH/AbYBQAH7AbUBOQH+AbsBPAHpAaIBaQG+AXsB
+        fgHmAccBxAHUAroB1gGuAbABpQF2AXgBswGIAYUBnwFsAXAD/QIyAZgD/gHTAdYB1wFfAmEBpgGvAbAD
+        xQF+AXYBawHMAaUBgQH1AdwBwgG6Aa0BnwFMAUsBSQFHAkYDvQP+An8BsgK/AdgD+QN9A/cC8AHxA+oD
+        5QPbA8cDmgORA4EDawNTA6oD6gP4MAAD/wHZAcoBzgH7AboBOgH+Ab4BTgH9AcYBUwH9AcMBWgH/Ab8B
+        XAH+AcMBRQH+AcEBQwHCAXcBfwHcAb4BvQHRAacBqAHBAYsBigHUAaEBnwGpAXABcwP/AjIBmAFpAXIB
+        cwMKAXkBZgFVAUACRQFaAUUBPwF6AXIBZwHOAasBhwHcAcYBrAEYAhkBbQFaAVUBjQGLAYoDCgGLAXYB
+        cQJ/AbIBhgGRAawD+QOBA/oD2QamA6MDmwORA5ADlwOuA2UDngPqA/gwAAP/AcwBwwHQAfwBxgFRAf0B
+        yQFlAf8BzgFsAf0B0AFuAfsBzgFtAf4BywFjAf0BygFWAcwBiwGNAdoBvAG7AdMCoQG4AYcBhQGtAX0B
+        ewGpAW8BcAH9Af4B/AFpAXIBcwFmAWEBWQHsAdoBxQH9AfAB3wMKARwCHgFXAVQBTQF1AWMBTgEqAi0B
+        kwKWAv4B/QP+AaYBrwGwAT8BQQFCAkABagIIAR0D+QOEA/wD4AOzA7EDrgOrAqoBqwOkA60DxAF0AXMB
+        dAOaA+oD+DAAA/wBvAG0AbsB/wHTAWwB/QHZAXsB/wHbAYcB/gHeAYsB/wHdAYoB/gHWAYMB/wHXAXAB
+        yAGhAaMB2wG8AbsB0QGYAZsBvwGPAYsBygGRAZQBrgFsAW0B/QL/AwoBrAGhAbEBtwGrAb4BygK4AwoB
+        YwFrAXgBOAE6AXACLgFiAWcBZQGMApgBywKYAcsCmAHLApgBywFZAV8BhgEoASoBNQJPAVQD+QOJA/4D
+        1wOYA5YDlAaSA40DngHNAcwBzQN1A5cD6gP4MAAB8AHvAfEBugGuAaIB/wHbAX0B/wHfAYwB/gHnAZsB
+        /QHqAaEB/gHpAZ4B/wHhAZQB/wHdAYMB0AGwAbEB0AG7Ab0ByQGPAZABwAFuAW0BrgJyAaoBagFpA/4D
+        CgHUAckBygHMAcMBxAFTAkwBMwI2AdsB3gHkAsgB4gLTAe0B0AHMAd8CywHlAssB5QLLAeUCywHlAtEB
+        5QHRAdIB0wPkA/kDiwP/A+wDygPFA8QDwgK7AbwDuQO6As8B0AN4A5cD6gP4MAAB3wHcAdgBtwGpAZIB
+        /wHhAZAB+wHoAaQB/AHzAbMB/QH2Ab0B/wH1AbkB/QHqAaYB9QHYAZUB2wG+AcEB5QHQAdIB8wHeAdwB
+        2gGXAZQByQFjAWQBwAFfAWMD/wELAgoBdgFvAWMDCgFpAXIBcyT+A/kDjwP/A9IDhwOFBoQCgQGCA4AD
+        lALUAdUDfAOZA+oD+DAAA9QBkAGPAZMBmgGXAY8BvAGtAZMB5gHeAbkB/wH+AcwC/wHPAf8B+AGzAeYB
+        zgGMAeYB0QHQAeMCywHhAcUBxAHjAcIBxgHaAcMBwQHWAZ4BowP/A5wDTAOqA/YD/gHpAewB7QHwAvEb
+        /gP6A5ID/gPyA+AD3QPYAdQC0wPKAsgByQLIAckD1AN9A5wD7AP5MAAB+gH7Af8B9QH2AfIB3wHWAdkB
+        zAHQAcsB0AHGAcwBuQGqAa4BqQGWAZEBpQGIAYMBrAGLAYIB3gHFAckB9AHpAesB+AH2AfUB+QH9Af4D
+        /wH9Bf8D/QO9A2ADmAP+AYkBlAGWAaQCpxv+A/sDlQP+BvoD+APxA+0D4QLfAeAD3QPXA4IDpAPwA/ow
+        AAH9Af8B/gP/Af0B/wH+A/8B/QL/AfsB/gH8AfAB7gHtAeYC3gHCAbABsQX/Af4F/wH+Cf8D/gP7Ab8B
+        xAHFATsCPgNHATECMwOjG/4D/QOXA/0D9gP0A/ED7gPqA+QD4APaA9kDiAOtA/gD/TAAAf8B/gP/Af4B
+        /Qn/Af4G/wH+Av8B/gH/Af4B/wH8Av4J/wH9Bf8J/gHGAdAB0gGJAZQBlgGUAZ8BoQHZAeAB4R7+A4oD
+        hwOEA4ADfAN2A3IDbQNoA2MDXwNcA78D/QP+MAABQgFNAT4HAAE+AwABKAMAAUADAAEQAwABAQEAAQEF
+        AAGAFwAD/5cACw==
+</value>
+  </data>
+  <data name="TvDBObjects.DefaultModifiers" type="System.CodeDom.MemberAttributes, System, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>Private</value>
+  </data>
+  <data name="TvDBObjects.Modifiers" type="System.CodeDom.MemberAttributes, System, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>Private</value>
+  </data>
+  <data name="TvDBObjects.Locked" type="System.Boolean, mscorlib, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </data>
+  <data name="contextMenuWorkSpace.DefaultModifiers" type="System.CodeDom.MemberAttributes, System, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>Private</value>
+  </data>
+  <data name="contextMenuWorkSpace.Location" type="System.Drawing.Point, System.Drawing, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>150, 17</value>
+  </data>
+  <data name="contextMenuWorkSpace.Modifiers" type="System.CodeDom.MemberAttributes, System, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>Private</value>
+  </data>
+  <data name="menuItemAddWorkspace.Modifiers" type="System.CodeDom.MemberAttributes, System, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>Private</value>
+  </data>
+  <data name="menuItemAddWorkspace.DefaultModifiers" type="System.CodeDom.MemberAttributes, System, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>Private</value>
+  </data>
+  <data name="menuItemDeleteWorkspace.Modifiers" type="System.CodeDom.MemberAttributes, System, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>Private</value>
+  </data>
+  <data name="menuItemDeleteWorkspace.DefaultModifiers" type="System.CodeDom.MemberAttributes, System, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>Private</value>
+  </data>
+  <data name="menuItemAddActiveDocument.Modifiers" type="System.CodeDom.MemberAttributes, System, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>Private</value>
+  </data>
+  <data name="menuItemAddActiveDocument.DefaultModifiers" type="System.CodeDom.MemberAttributes, System, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>Private</value>
+  </data>
+  <data name="menuItemAddAllDocuments.Modifiers" type="System.CodeDom.MemberAttributes, System, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>Private</value>
+  </data>
+  <data name="menuItemAddAllDocuments.DefaultModifiers" type="System.CodeDom.MemberAttributes, System, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>Private</value>
+  </data>
+  <data name="menuItemOpenDocument.Modifiers" type="System.CodeDom.MemberAttributes, System, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>Private</value>
+  </data>
+  <data name="menuItemOpenDocument.DefaultModifiers" type="System.CodeDom.MemberAttributes, System, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>Private</value>
+  </data>
+  <data name="menuItemDeleteItem.Modifiers" type="System.CodeDom.MemberAttributes, System, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>Private</value>
+  </data>
+  <data name="menuItemDeleteItem.DefaultModifiers" type="System.CodeDom.MemberAttributes, System, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>Private</value>
+  </data>
+  <data name="menuItemAddScriptFile.Modifiers" type="System.CodeDom.MemberAttributes, System, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>Private</value>
+  </data>
+  <data name="menuItemAddScriptFile.DefaultModifiers" type="System.CodeDom.MemberAttributes, System, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>Private</value>
+  </data>
+  <data name="$this.Locked" type="System.Boolean, mscorlib, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </data>
+  <data name="$this.TrayLargeIcon" type="System.Boolean, mscorlib, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </data>
+  <data name="$this.Localizable" type="System.Boolean, mscorlib, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </data>
+  <data name="$this.GridSize" type="System.Drawing.Size, System.Drawing, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>8, 8</value>
+  </data>
+  <data name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>(Default)</value>
+  </data>
+  <data name="$this.DrawGrid" type="System.Boolean, mscorlib, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </data>
+  <data name="$this.TrayHeight" type="System.Int32, mscorlib, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>80</value>
+  </data>
+  <data name="$this.SnapToGrid" type="System.Boolean, mscorlib, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </data>
+  <data name="$this.DefaultModifiers" type="System.CodeDom.MemberAttributes, System, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>Private</value>
+  </data>
+  <data name="$this.Name">
+    <value>FrmWorkSpace</value>
+  </data>
+</root>

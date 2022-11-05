@@ -1,0 +1,464 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+  <PropertyGroup>
+    <ProjectType>Local</ProjectType>
+    <ProductVersion>7.10.3077</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{0A386EC6-40E1-4C5A-BA6B-B483FE89E8E7}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ApplicationIcon>Images\IconCommand.ico</ApplicationIcon>
+    <AssemblyKeyContainerName />
+    <AssemblyName>QueryCommander</AssemblyName>
+    <AssemblyOriginatorKeyFile />
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>Library</OutputType>
+    <RootNamespace>QueryCommander</RootNamespace>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+    <StartupObject />
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>0.0</OldToolsVersion>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile />
+    <DefineConstants>DEBUG;TRACE;LOGEVENTS</DefineConstants>
+    <DocumentationFile />
+    <DebugSymbols>true</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn />
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>full</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile />
+    <DefineConstants>TRACE;LOGEVENTSx</DefineConstants>
+    <DocumentationFile />
+    <DebugSymbols>true</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn />
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>full</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <COMReference Include="AxSHDocVw">
+      <Guid>{EAB22AC0-30C1-11CF-A7EB-0000C05BAE0B}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>1</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+    </COMReference>
+    <COMReference Include="SHDocVw">
+      <Guid>{EAB22AC0-30C1-11CF-A7EB-0000C05BAE0B}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>1</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+    </COMReference>
+    <ProjectReference Include="..\SharedLayer\SharedLayer.csproj">
+      <Project>{58b9266a-14ee-4bae-8139-2d5bb773c28e}</Project>
+      <Name>SharedLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="QueryCommander.PlugIn.Core\QueryCommander.PlugIn.Core.csproj">
+      <Name>QueryCommander.PlugIn.Core</Name>
+      <Project>{DAC80F46-C351-4858-9BC2-9239ACE606F3}</Project>
+      <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
+    </ProjectReference>
+    <ProjectReference Include="QueryCommander.VSS\QueryCommander.VSS.csproj">
+      <Name>QueryCommander.VSS</Name>
+      <Project>{6C73E285-D0E6-4C74-B5F5-EFAC983700BB}</Project>
+      <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
+    </ProjectReference>
+    <ProjectReference Include="WinFormsUI\WinFormsUI.csproj">
+      <Name>WinFormsUI</Name>
+      <Project>{D3C782BA-178E-4235-A3BA-8C11DEBB6BEE}</Project>
+      <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
+    </ProjectReference>
+    <Reference Include="ADODB">
+      <Name>adodb</Name>
+      <HintPath>..\..\..\..\..\..\Program Files\Microsoft.NET\Primary Interop Assemblies\adodb.dll</HintPath>
+      <AssemblyFolderKey>hklm\primary interop assemblies</AssemblyFolderKey>
+    </Reference>
+    <Reference Include="AxInterop.SHDocVw">
+      <Name>AxInterop.SHDocVw</Name>
+      <HintPath>AxInterop.SHDocVw.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.TextEditor">
+      <Name>ICSharpCode.TextEditor</Name>
+      <HintPath>ICSharpCode.TextEditor.dll</HintPath>
+    </Reference>
+    <Reference Include="MenuImageLib">
+      <Name>MenuImageLib</Name>
+      <HintPath>MenuImageLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.SqlXml">
+      <Name>Microsoft.Data.SqlXml</Name>
+      <HintPath>..\..\Program Files\SQLXML 3.0\bin\Microsoft.Data.SqlXml.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data">
+      <Name>MySql.Data</Name>
+      <HintPath>..\..\Program Files\MySQL\MySQL Connector Net 1.0.4\bin\.NET 1.1\MySql.Data.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Oracle.DataAccess">
+      <Name>Oracle.DataAccess</Name>
+      <HintPath>..\..\oracle\ora92\bin\Oracle.DataAccess.dll</HintPath>
+      <AssemblyFolderKey>hklm\dn\odp.net</AssemblyFolderKey>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Sybase.Data.AseClient">
+      <Name>Sybase.Data.AseClient</Name>
+      <HintPath>..\..\sybase\ADO.NET\dll\Sybase.Data.AseClient.dll</HintPath>
+      <AssemblyFolderKey>hklm\dn\sybase assemblies 1.0</AssemblyFolderKey>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <Name>System.Drawing</Name>
+    </Reference>
+    <Reference Include="System.Windows.Forms">
+      <Name>System.Windows.Forms</Name>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Database\DatabaseFactory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Database\DataSource.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Database\DBCommon.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Database\IDatabase.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Database\Microsoft\Sql2000\DataManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Database\Microsoft\Sql2000\OleDbDataManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Database\MySQL\4x\DataManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Database\Oracle\9i\DataManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Database\Sybase\ASE\DataManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Database\XMLDatabase.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Exception\ExceptionHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="General\Common.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="General\Options.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="General\QCTreeNode.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="General\Settings.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="General\WorkSpace.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="QCTextEditor\SQLStatement.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="QCTextEditor\SyntaxReader.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="QCTextEditor\TextEditorControlWrapper.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="WinGui\Base\FrmBaseContent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WinGui\Base\FrmBaseDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WinGui\CommonDialogs\FrmAbout.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WinGui\CommonDialogs\FrmAddCLRLogic.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WinGui\CommonDialogs\FrmAddToSnippet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WinGui\CommonDialogs\FrmAddWorkSpace.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WinGui\CommonDialogs\FrmAlterDocumentationOutput.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WinGui\CommonDialogs\FrmChooseXMLFile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WinGui\CommonDialogs\FrmDBConnection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WinGui\CommonDialogs\FrmDBConnections.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WinGui\CommonDialogs\FrmDocumentHeader.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WinGui\CommonDialogs\FrmExceptionMessage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WinGui\CommonDialogs\FrmGotoLine.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WinGui\CommonDialogs\FrmInsertStatement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WinGui\CommonDialogs\FrmOption.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WinGui\CommonDialogs\FrmReferenceObjects.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WinGui\CommonDialogs\FrmSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WinGui\CommonDialogs\FrmSnippets.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WinGui\CommonDialogs\FrmXMLError.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WinGui\FrmDBObjects.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WinGui\FrmDebug.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WinGui\FrmOutput.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WinGui\FrmQuery.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WinGui\FrmStartPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WinGui\FrmTask.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WinGui\FrmWorkSpace.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WinGui\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WinGui\UserControls\UcDbConnectionMicrosoftOleDbClient.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="WinGui\UserControls\UcDbConnectionMicrosoftSqlClient.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="WinGui\UserControls\UcDbConnectionMySQLClient.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="WinGui\UserControls\UcDbConnectionOracleClient.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="WinGui\UserControls\UcDbConnectionSybaseASEClient.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="WinGui\UserControls\UcOptionEditor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="WinGui\UserControls\UcOptionsEnviroments.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="WinGui\UserControls\UcOptionsQuerySettings.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="WinGui\UserControls\UcOptionStartUp.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <EmbeddedResource Include="Database\Embedded\ORACLESQL-Mode.xshd" />
+    <EmbeddedResource Include="Database\Embedded\SQL-Mode.xshd" />
+    <EmbeddedResource Include="Database\MySQL\4x\Meta\QueryStrings.xml" />
+    <EmbeddedResource Include="Database\Oracle\9i\Meta\QueryStrings.xml" />
+    <EmbeddedResource Include="Database\Sybase\ASE\Meta\QueryStrings.xml" />
+    <EmbeddedResource Include="DataSources.config" />
+    <EmbeddedResource Include="DockManager.config" />
+    <EmbeddedResource Include="Embedded\doc.xsl" />
+    <EmbeddedResource Include="Embedded\infoexception.gif" />
+    <EmbeddedResource Include="Embedded\infomessage.gif" />
+    <EmbeddedResource Include="Embedded\infowarning.gif" />
+    <EmbeddedResource Include="Embedded\RecentObjects.xml" />
+    <EmbeddedResource Include="Localization\Language\Swedish\Strings.resx" />
+    <EmbeddedResource Include="QCTextEditor\SQLReservedWords.xml" />
+    <EmbeddedResource Include="QCTextEditor\TextEditorControlWrapper.resx">
+      <DependentUpon>TextEditorControlWrapper.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WinGui\Base\FrmBaseContent.resx">
+      <DependentUpon>FrmBaseContent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WinGui\Base\FrmBaseDialog.resx">
+      <DependentUpon>FrmBaseDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WinGui\CommonDialogs\FrmAbout.resx">
+      <DependentUpon>FrmAbout.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WinGui\CommonDialogs\FrmAddCLRLogic.resx">
+      <DependentUpon>FrmAddCLRLogic.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WinGui\CommonDialogs\FrmAddToSnippet.resx">
+      <DependentUpon>FrmAddToSnippet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WinGui\CommonDialogs\FrmAddWorkSpace.resx">
+      <DependentUpon>FrmAddWorkSpace.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WinGui\CommonDialogs\FrmAlterDocumentationOutput.resx">
+      <DependentUpon>FrmAlterDocumentationOutput.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WinGui\CommonDialogs\FrmChooseXMLFile.resx">
+      <DependentUpon>FrmChooseXMLFile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WinGui\CommonDialogs\FrmDBConnection.resx">
+      <DependentUpon>FrmDBConnection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WinGui\CommonDialogs\FrmDBConnections.resx">
+      <DependentUpon>FrmDBConnections.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WinGui\CommonDialogs\FrmDocumentHeader.resx">
+      <DependentUpon>FrmDocumentHeader.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WinGui\CommonDialogs\FrmExceptionMessage.resx">
+      <DependentUpon>FrmExceptionMessage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WinGui\CommonDialogs\FrmGotoLine.resx">
+      <DependentUpon>FrmGotoLine.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WinGui\CommonDialogs\FrmInsertStatement.resx">
+      <DependentUpon>FrmInsertStatement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WinGui\CommonDialogs\FrmOption.resx">
+      <DependentUpon>FrmOption.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WinGui\CommonDialogs\FrmReferenceObjects.resx">
+      <DependentUpon>FrmReferenceObjects.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WinGui\CommonDialogs\FrmSearch.resx">
+      <DependentUpon>FrmSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WinGui\CommonDialogs\FrmSnippets.resx">
+      <DependentUpon>FrmSnippets.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WinGui\CommonDialogs\FrmXMLError.resx">
+      <DependentUpon>FrmXMLError.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WinGui\FrmDBObjects.resx">
+      <DependentUpon>FrmDBObjects.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WinGui\FrmDebug.resx">
+      <DependentUpon>FrmDebug.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WinGui\FrmOutput.resx">
+      <DependentUpon>FrmOutput.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WinGui\FrmQuery.resx">
+      <DependentUpon>FrmQuery.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WinGui\FrmStartPage.resx">
+      <DependentUpon>FrmStartPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WinGui\FrmTask.resx">
+      <DependentUpon>FrmTask.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WinGui\FrmWorkSpace.resx">
+      <DependentUpon>FrmWorkSpace.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WinGui\MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WinGui\UserControls\UcDbConnectionMicrosoftOleDbClient.resx">
+      <DependentUpon>UcDbConnectionMicrosoftOleDbClient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WinGui\UserControls\UcDbConnectionMicrosoftSqlClient.resx">
+      <DependentUpon>UcDbConnectionMicrosoftSqlClient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WinGui\UserControls\UcDbConnectionMySQLClient.resx">
+      <DependentUpon>UcDbConnectionMySQLClient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WinGui\UserControls\UcDbConnectionOracleClient.resx">
+      <DependentUpon>UcDbConnectionOracleClient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WinGui\UserControls\UcDbConnectionSybaseASEClient.resx">
+      <DependentUpon>UcDbConnectionSybaseASEClient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WinGui\UserControls\UcOptionEditor.resx">
+      <DependentUpon>UcOptionEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WinGui\UserControls\UcOptionsEnviroments.resx">
+      <DependentUpon>UcOptionsEnviroments.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WinGui\UserControls\UcOptionsQuerySettings.resx">
+      <DependentUpon>UcOptionsQuerySettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WinGui\UserControls\UcOptionStartUp.resx">
+      <DependentUpon>UcOptionStartUp.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="App.config" />
+    <None Include="EditorSettings.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent />
+    <PostBuildEvent />
+  </PropertyGroup>
+</Project>

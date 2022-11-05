@@ -1,0 +1,56 @@
+[FILES]
+QueryCommander.PlugIn.Core.html
+QueryCommander.PlugIn.CoreHierarchy.html
+QueryCommander.PlugIn.Core.CallContext.html
+QueryCommander.PlugIn.Core.CallContextMembers.html
+QueryCommander.PlugIn.Core.CallContextConstructor.html
+QueryCommander.PlugIn.Core.CallContextProperties.html
+QueryCommander.PlugIn.Core.CallContext.DbConnection.html
+QueryCommander.PlugIn.Core.CallContext.QueryWindowContext.html
+QueryCommander.PlugIn.Core.CallContext.ResultDataSet.html
+QueryCommander.PlugIn.Core.Common.html
+QueryCommander.PlugIn.Core.CommonMembers.html
+QueryCommander.PlugIn.Core.CommonConstructor.html
+QueryCommander.PlugIn.Core.Common.ExecutionTypes.html
+QueryCommander.PlugIn.Core.Common.TriggerTypes.html
+QueryCommander.PlugIn.Core.Interfaces.html
+QueryCommander.PlugIn.Core.InterfacesHierarchy.html
+QueryCommander.PlugIn.Core.Interfaces.IPlugin_OnAfterQueryExecution1.html
+QueryCommander.PlugIn.Core.Interfaces.IPlugin_OnAfterQueryExecution1Members.html
+QueryCommander.PlugIn.Core.Interfaces.IPlugin_OnAfterQueryExecution1Properties.html
+QueryCommander.PlugIn.Core.Interfaces.IPlugin_OnAfterQueryExecution1.ExecutionType.html
+QueryCommander.PlugIn.Core.Interfaces.IPlugin_OnAfterQueryExecution1Methods.html
+QueryCommander.PlugIn.Core.Interfaces.IPlugin_OnAfterQueryExecution1.Execute.html
+QueryCommander.PlugIn.Core.Interfaces.IPlugin_OnBeforeQueryExecution1.html
+QueryCommander.PlugIn.Core.Interfaces.IPlugin_OnBeforeQueryExecution1Members.html
+QueryCommander.PlugIn.Core.Interfaces.IPlugin_OnBeforeQueryExecution1Properties.html
+QueryCommander.PlugIn.Core.Interfaces.IPlugin_OnBeforeQueryExecution1.ExecutionType.html
+QueryCommander.PlugIn.Core.Interfaces.IPlugin_OnBeforeQueryExecution1Methods.html
+QueryCommander.PlugIn.Core.Interfaces.IPlugin_OnBeforeQueryExecution1.Execute.html
+QueryCommander.PlugIn.Core.Interfaces.IPlugin_OnMenuClick1.html
+QueryCommander.PlugIn.Core.Interfaces.IPlugin_OnMenuClick1Members.html
+QueryCommander.PlugIn.Core.Interfaces.IPlugin_OnMenuClick1Properties.html
+QueryCommander.PlugIn.Core.Interfaces.IPlugin_OnMenuClick1.ExecutionType.html
+QueryCommander.PlugIn.Core.Interfaces.IPlugin_OnMenuClick1.MenuItemName.html
+QueryCommander.PlugIn.Core.Interfaces.IPlugin_OnMenuClick1Methods.html
+QueryCommander.PlugIn.Core.Interfaces.IPlugin_OnMenuClick1.Execute.html
+
+[OPTIONS]
+Title=Documentation
+Auto Index=Yes
+Binary TOC=Yes
+Compatibility=1.1 or later
+Compiled file=Documentation.chm
+Default Window=MsdnHelp
+Default topic=QueryCommander.PlugIn.Core.html
+Display compile progress=No
+Error log file=Documentation.log
+Full-text search=Yes
+Index file=Documentation.hhk
+Language=0x409 English (United States)
+Contents file=Documentation.hhc
+
+[WINDOWS]
+MsdnHelp="Documentation Help","Documentation.hhc","Documentation.hhk","QueryCommander.PlugIn.Core.html","QueryCommander.PlugIn.Core.html",,,,,0x62520,220,0x387e,[86,51,872,558],,,,,,,0
+
+[INFOTYPES]
