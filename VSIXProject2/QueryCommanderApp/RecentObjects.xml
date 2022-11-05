@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<recentobjects>
+  <objectName changedate="2005-01-28 14:52:28">TEST</objectName>
+  <objectName changedate="2005-01-25 11:20:31">sp_TEST</objectName>
+  <objectName changedate="2005-01-20 20:18:58">wmsp_FindPersonByName</objectName>
+  <objectName changedate="2005-01-20 19:53:46">wmsp_DeleteAllDeliveryUnits</objectName>
+  <objectName changedate="2005-02-01 08:16:30">fn_GetRoleBitValues</objectName>
+  <objectName changedate="2004-12-08 13:37:43">fn_GetRoleNames</objectName>
+  <objectName changedate="2004-12-08 07:48:05">wmsp_GetProjectResultForMonth</objectName>
+  <objectName changedate="2004-12-04 20:43:55">wmsp_Report_TaskReport1</objectName>
+  <objectName changedate="2004-12-04 20:43:15">fn_GetTotalCostForTask</objectName>
+  <objectName changedate="2004-12-02 14:00:43">fn_GetTotalHoursForTask</objectName>
+</recentobjects>

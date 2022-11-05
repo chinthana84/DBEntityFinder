@@ -4,6 +4,7 @@ using EnvDTE;
 using Microsoft.VisualStudio.Shell;
 using Microsoft.VisualStudio.Shell.Interop;
 using Microsoft.VisualStudio.TextManager.Interop;
+using QueryCommander;
 using ServiceLayer;
 using ServiceLayer.Implementations;
 using ServiceLayer.Interfaces;
@@ -130,12 +131,33 @@ namespace VSIXProject2
                
                 if (dataTable.Rows.Count == 1)
                 {
-                    frmViewer frmViewer = new frmViewer(appKeyObject);
-                    frmViewer.richTextBox1.Text = dataTable.Rows[0][0].ToString();
-                    //frmViewer.richTextBox1.SelectAll();
-                    frmViewer.sysntaxHighli();
-                    frmViewer.Text = appKeyObject.Value + " " + appKeyObject.dbType;
-                    frmViewer.ShowDialog();
+                    string myTempFile = Path.Combine(Path.GetTempPath(), "SaveFile.txt");
+                    using (StreamWriter sw = new StreamWriter(myTempFile))
+                    {
+                        sw.WriteLine(dataTable.Rows[0][0].ToString());
+                    }
+
+                    string myTempFileCon = Path.Combine(Path.GetTempPath(), "SaveFileConnect.txt");
+                    using (StreamWriter sw = new StreamWriter(myTempFileCon))
+                    {
+                        sw.WriteLine(appKeyObject.Value.ToString());
+                    }
+
+                    string strExeFilePath = System.Reflection.Assembly.GetExecutingAssembly().Location;
+                    //This will strip just the working path name:
+                    //C:\Program Files\MyApplication
+                    string strWorkPath = System.IO.Path.GetDirectoryName(strExeFilePath);
+
+                    //System.Diagnostics.Process.Start(@"C:\Users\Chinthana\source\repos\DBEntityFinder\VSIXProject2\bin\Debug\QueryCommander.exe");
+                    //C:\Users\Chinthana\source\repos\DBEntityFinder\VSIXProject2\bin\Debug\QueryCommander.exe
+                    System.Diagnostics.Process.Start($@"{strWorkPath}\QueryCommanderApp\QueryCommander.exe");
+
+                    //frmViewer frmViewer = new frmViewer(appKeyObject);
+                    //frmViewer.richTextBox1.Text = dataTable.Rows[0][0].ToString();
+                    ////frmViewer.richTextBox1.SelectAll();
+                    //frmViewer.sysntaxHighli();
+                    //frmViewer.Text = appKeyObject.Value + " " + appKeyObject.dbType;
+                    //frmViewer.ShowDialog();
                 }
                 else if (dataTable.Rows.Count > 1)
                 {

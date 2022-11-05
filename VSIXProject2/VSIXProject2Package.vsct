@@ -56,7 +56,7 @@
         <Parent guid="guidVSIXProject2PackageCmdSet" id="MyMenuGroup" />
         <Icon guid="guidImages" id="bmpPic1" />
         <Strings>
-          <ButtonText>FindDBObject</ButtonText>
+          <ButtonText>FindDBObjectTEST</ButtonText>
         </Strings>
       </Button>
     </Buttons>

@@ -1,0 +1,30 @@
+Checking out
+/******************
+ Executed:2004-11-11 10:56:27
+******************/
+
+/******************
+ Executed:2004-11-11 10:56:07
+******************/
+
+/*******************************************************************************
+<member name="fn_GetRoleBitValues">
+	<summary>asdfsafdasfasfdadf</summary>
+	<revision author="wmmihaa" date="2004-11-11 10:55:52">Created</revision>
+	<revision author="wmmihaa" date="2004-11-11 10:56:21">Altered</revision>
+	<param name="@projectmemberID"></param>
+</member>
+********************************************************************************/
+CREATE function fn_GetRoleBitValues(@projectmemberID UNIQUEIDENTIFIER) returns int as 
+begin
+
+declare @RoleBitValues int
+
+SELECT	@RoleBitValues = sum( r.BitValue )
+from	 	ProjectMember pr
+join 		MemberRole mr on mr.fk_ProjectMembers = pr.ID
+join 		Role r on r.ID = mr.fk_Roles
+where		pr.ID  = @projectmemberID	
+
+return @RoleBitValues 
+end

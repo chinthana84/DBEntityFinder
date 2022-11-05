@@ -1,0 +1,118 @@
+<?xml version="1.0"?>
+<!--?xml-stylesheet type='text/xsl' href='startpage.xsl'?-->
+<?xml-stylesheet type='text/xsl' href='http://querycommander.rockwolf.com/startpage.xsl'?>
+<querycommander>
+  <!-- url="http://prdownloads.sourceforge.net/querycommander/QueryCommander_2.2.2.0.msi?download -->
+  <version latest="3.0.0.6" url="http://prdownloads.sourceforge.net/querycommander/QueryCommander_3.0.0.6.msi?download" deploymentdate="2004-12-06" title="You are using the latest release">
+    <summary />
+    <features>
+      <feature name="Oracle support">Although not yet fully supported, useful for simple queries</feature>
+      <feature name="MySQL support">Useful for simple queries</feature>
+      <feature name="Comapre - Show difference">Compare and view differences between script files</feature>
+      <feature name="Export to Excel">Save your output to microsoft Excel</feature>
+      <feature name="New Editor">Extracted from #develop. Much faster and more reliable</feature>
+      <feature name="Workspaces">Organize your scriptfiles</feature>
+      <feature name="Drag and Drop">Drag and drop files to editor window</feature>
+      <feature name="Undo Checkout ">Additional Visual SourceSafe integration.</feature>
+      <feature name="Comapare scriptfiles">View file content differances.</feature>
+      <feature name="Line numbering">Optional feature for editor</feature>
+      <feature name="[2.2.4.0]VSS integration">Visual SourceSafe integration. Check-in, Check-out etc</feature>
+    </features>
+    <resolvedbugs>
+      <resolvedbug name="82802 Undo in Editor ">Fixed.</resolvedbug>
+      <resolvedbug name="1084994 Combination of Queries not working ">Fixed</resolvedbug>
+      <resolvedbug name="1085005 Executing a Query with a variable displays 2 times ">Fixed</resolvedbug>
+      <resolvedbug name="1075489 Fixed ">Fixed</resolvedbug>
+      <resolvedbug name="1082379 Insert queries from select not always working ">Fixed</resolvedbug>
+      <resolvedbug name="1082233 Mark Char Expression in Editor ">Fixed</resolvedbug>
+      <resolvedbug name="1073406 The data sources window does not display Friendly Names ">Fixed</resolvedbug>
+      <resolvedbug name="1082236 Keep row and display of result pane ">Fixed</resolvedbug>
+      <resolvedbug name="1081988 Display Line and Col in Status Bar ">Fixed</resolvedbug>
+      <resolvedbug name="1099433 Goto line - window scrolling  ">Fixed</resolvedbug>
+      <resolvedbug name="1099434 F2 -reserved words in upper case ">Fixed</resolvedbug>
+      <resolvedbug name="1099454 Shortcut key for copy/paste in Query results ">Fixed</resolvedbug>
+      <resolvedbug name="1080805 Intellisense does not work when tables have names with owner ">Fixed</resolvedbug>
+      <resolvedbug name="Running a query by pressing ALT+X will sometimes result in a line break. ">Fixed</resolvedbug>
+    </resolvedbugs>
+    <knownbugs>
+      <bug name="ALT+X">Running a query by pressing ALT+X will sometimes result in a line break.</bug>
+      <bug name="Object reference not set to an instance of an object">if this message pops up after logging in, Remove the Dockmanager.config file from the QueryCommander directory</bug>
+    </knownbugs>
+  </version>
+  <features>
+    <feature name="IntelliSense">
+		By pressing CTRL+Space, IntelliSense will provide an array of options that make language references easily accessible. 
+		When coding, you do not need to leave the editor window to perform searches on database elements. 
+		You can keep your context, find the information you need, insert elements directly, and even have IntelliSense complete your typing.
+		IntelliSense comprises database objects, reserved words, local variables  and columns. 
+		Tip: Use wild-card such as "sp*time" to get all stored procedures which ends with "time". 
+		</feature>
+    <feature name="Workspace">
+		Workspaces are used for organizing script files. Workspace items are similar to shortcuts where each "file" can be included in several workspaces. 
+		</feature>
+    <feature name="Export to Excel">
+		This feature is implemented as a Plug-in. Enabling this option will save the grid output as an Microsoft Excel file.
+		</feature>
+    <feature name="Source Control">
+		Integration with Visual SourceSafe enables developers to access team development features such as check-in and check-out, 
+		history etc. QueryCommander does NOT provide support for all features in Visual SourceSafe. 
+		To consume all features of Visual SourceSafe, the developer environment need access local recourses (files). 
+		Since working with database objects (tables, views, stored procedures and functions), developers might collaborate with others, sharing the same objects. 
+		It’s there for important to understand that altering a checked-out object will make changes visible to others as if there where no source control. It will however prevent other users (using QueryCommander) from altering the same object.
+
+		</feature>
+    <feature name="Go to Definition/Go to Reference">
+		Perhaps the most appreciated feature of all. Pointing the cursor to a database object (in the query window) and pressing F12 will open a new window with the definition of the choosen object. 
+		Pressing Shift+F12 will present a dialog with all objects using the choosen object.
+		</feature>
+    <feature name="Xml2Data">
+		Create table structure from xml file, and populate the tables with data from the same file. To preserve the structure of the document, QueryCommander can add identifiers and foreign keys to the tables.
+		</feature>
+    <feature name="Comment header help">
+		You can document stored procedures using XML. 
+		By pressing F11 or by using the Tool menu you can add comment header above the declaration of the procedure, 
+		function or view. You can (should) complement the header tags with additional information. 
+		First time you add a header, a &lt;revision&gt; tag with the value "Created" will be added. 
+		When you later alter the same object, an additional &lt;revision&gt; tag with the value "Altered" will be added.
+		</feature>
+    <feature name="Documentation">
+		QueryCommander will process documentation comment headers in the choosen database to an XML file. The xml file is then parsed thought an xsl file to 
+		deliver you a documentation of all database objects (not tables since they are not allowed to be commented).
+		</feature>
+    <feature name="Script for insert and update">
+		By querying a table for a selected content you can create insert and update scripts through the Tool menu.
+		</feature>
+    <feature name="Edit in grid">
+		When querying a single table (no joins),  you can manipulate the result in the output window. 
+		</feature>
+    <feature name="Updates">
+		You will be notified about new updates and releases upon starting QueryCommander. You can then choose to update by pressing the Update now button. 
+		</feature>
+    <feature name="Query statistics message">
+		Enabling this option will inform the user about ineffective query plans.
+		</feature>
+    <feature name="Parenthesis recognition">
+		The query window will highlight the scope of the parenthesis.
+		</feature>
+    <feature name="Run current query">
+		Simply point to the query you want to execute and press F9. No need to select the query to be executed.
+		</feature>
+  </features>
+  <plugins header="bla bla bla">
+    <plugin name="QueryCommander.PlugIn.Core" url="http://querycommander.rockwolf.com/plugin/QueryCommander.PlugIn.Core.dll" docurl="http://querycommander.rockwolf.com/plugin/Documentation.chm" desc="Includes all interfaces and transportobjects" />
+    <plugin name="MyPlugin1" url="http://querycommander.rockwolf.com/plugin/MyPlugin1.dll" sourceurl="http://querycommander.rockwolf.com/plugin/MyPlugin1.zip" desc="Sample project" />
+    <plugin name="TextFileOutput" url="http://querycommander.rockwolf.com/plugin/TextFileOutput.dll" sourceurl="http://querycommander.rockwolf.com/plugin/TextFileOutput.zip" desc="Sample project. Enables users to save the query result to an output file." />
+    <plugin name="ExcelFileOutput" url="http://querycommander.rockwolf.com/plugin/ExcelFileOutput.zip" sourceurl="http://querycommander.rockwolf.com/plugin/ExcelFileOutput.zip" desc="Sample project. Enables users to save the query result to an Microsoft Excel file. Save the Interop.Excel.dll in the QueryCommander base folder and the ExcelFileOutput.dll file in the PlugIn folder." />
+  </plugins>
+  <knownbugs>
+    <bug name="ALT+X">Running a query by pressing ALT+X will sometimes result in a line break.</bug>
+  </knownbugs>
+  <prerelease>
+    <note>Oracle support</note>
+    <note>New Editor</note>
+    <note>Drag n' Drop</note>
+    <note>working file folder</note>
+    <note>Output 2 Excel</note>
+  </prerelease>
+  <statement />
+</querycommander>
