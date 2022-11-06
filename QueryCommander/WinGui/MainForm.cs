@@ -76,24 +76,6 @@ namespace QueryCommander
 
 		private Options m_options = new Options();
 		public ArrayList QueryForms = new ArrayList();
-		public System.Windows.Forms.MainMenu mainMenu;
-		private System.Windows.Forms.MenuItem menuItem4;
-		private System.Windows.Forms.MenuItem menuItemFile;
-		private System.Windows.Forms.MenuItem menuItemExit;
-		private System.Windows.Forms.MenuItem menuItemView;
-		private System.Windows.Forms.MenuItem menuItemPropertyWindow;
-		private System.Windows.Forms.MenuItem menuItemOutputWindow;
-		private System.Windows.Forms.MenuItem menuItemTaskList;
-		private System.Windows.Forms.MenuItem menuItemToolbox;
-		private System.Windows.Forms.MenuItem menuItemWindow;
-		private System.Windows.Forms.MenuItem menuItemHelp;
-		private System.Windows.Forms.MenuItem menuItemAbout;
-		private System.Windows.Forms.MenuItem menuItemNew;
-		private System.Windows.Forms.MenuItem menuItemOpen;
-		private System.Windows.Forms.MenuItem menuItemClose;
-		private System.Windows.Forms.MenuItem menuItemCloseAll;
-		private System.Windows.Forms.MenuItem menuItemTools;
-		private System.Windows.Forms.MenuItem menuItemOptions;
 		private WeifenLuo.WinFormsUI.DockPanel dockManager = new WeifenLuo.WinFormsUI.DockPanel();
 		
 		//public WeifenLuo.WinFormsUI.DockManager dockManager;
@@ -107,81 +89,99 @@ namespace QueryCommander
 		private System.Windows.Forms.ToolBarButton toolBarButtonToolbox;
 		private System.Windows.Forms.ToolBarButton toolBarButtonOutputWindow;
 		private System.Windows.Forms.ToolBarButton toolBarButtonTaskList;
-		private System.Windows.Forms.MenuItem menuItem1;
-		private System.Windows.Forms.MenuItem menuItemToolBar;
-		private System.Windows.Forms.MenuItem menuItemStatusBar;
 		private System.Windows.Forms.ToolBar toolBar;
 		private System.ComponentModel.IContainer components;
 		private System.Windows.Forms.ToolBarButton toolBarButtonSeparator2;
 		private System.Windows.Forms.ToolBarButton toolBarButtonRun;
-		private System.Windows.Forms.MenuItem menuItem_InsertStatement;
-		private System.Windows.Forms.MenuItem menuItemXmlDoc;
-		private System.Windows.Forms.MenuItem menuItem2;
-		private System.Windows.Forms.MenuItem menuItemInsertHeader;
-		private System.Windows.Forms.MenuItem menuItem5;
-		private System.Windows.Forms.MenuItem menuItem3;
-		private System.Windows.Forms.MenuItem miUndo;
-		private System.Windows.Forms.MenuItem menuItem_UpdateStatement;
-		private System.Windows.Forms.MenuItem menuItem6;
-		private System.Windows.Forms.MenuItem menuItem_Help;
-		private System.Windows.Forms.MenuItem menuItem_SaveAs;
-		private System.Windows.Forms.MenuItem menuItem8;
-		private System.Windows.Forms.MenuItem menuItem9;
-		private System.Windows.Forms.MenuItem menuItem_Save;
 		private System.Windows.Forms.StatusBarPanel panel1;
 		private System.Windows.Forms.StatusBarPanel panel2;
 		private System.Windows.Forms.StatusBarPanel panel3;
 		private System.Windows.Forms.StatusBarPanel panel4;
 		private System.Windows.Forms.ToolBarButton toolBarButtonSeparator3;
-		private System.Windows.Forms.MenuItem menuItemFind;
-		private System.Windows.Forms.MenuItem menuItemGoToLine;
-		private System.Windows.Forms.MenuItem menuItemPaste;
-		private System.Windows.Forms.MenuItem menuItemCopy;
-		private System.Windows.Forms.MenuItem menuItem7;
-		private System.Windows.Forms.MenuItem menuItem10;
 		public  ArrayList DBConnections = new ArrayList();
-		private System.Windows.Forms.MenuItem menuItemGoToDefenition;
-		private System.Windows.Forms.MenuItem menuItem11;
 		private System.Windows.Forms.ToolBarButton toolBarEnterpriseManager;
 		private System.Windows.Forms.ToolBarButton toolBarprofiler;
 		private System.Windows.Forms.ToolBarButton toolBarButtonSeparator4;
-		private System.Windows.Forms.MenuItem menuItem12;
-		private System.Windows.Forms.MenuItem menuItemEnterpriseManager;
-		private System.Windows.Forms.MenuItem menuItemProfiler;
-		private System.Windows.Forms.MenuItem menuItemRunQuery;
 		private System.Windows.Forms.Timer timer_StartUp;
-		private System.Windows.Forms.MenuItem menuItem13;
-		private System.Windows.Forms.MenuItem menuItemGoToReference;
-		private System.Windows.Forms.MenuItem menuItem14;
-		private System.Windows.Forms.MenuItem menuRecentItems;
-		private System.Windows.Forms.MenuItem menuItem15;
 		private Chris.Beckett.MenuImageLib.MenuImage menuExtender;
-		private System.Windows.Forms.MenuItem menuItemCloseOutputWindow;
-		private System.Windows.Forms.MenuItem menuItemRunCurrentQuery;
-		private System.Windows.Forms.MenuItem menuItem16;
-		private System.Windows.Forms.MenuItem menuItemRunQueryLine;
-		private System.Windows.Forms.MenuItem menuItem17;
-		private System.Windows.Forms.MenuItem menuItem18;
-		private System.Windows.Forms.MenuItem miImportXMLStructure;
-		private System.Windows.Forms.MenuItem miImportXMLData;
 		public bool Debug=false;
 		public System.Windows.Forms.ContextMenu contextMenuDataBases;
-		private System.Windows.Forms.MenuItem menuItem19;
-		private System.Windows.Forms.MenuItem menuItemManageSnippets;
 		static System.Windows.Forms.Form _activeForm;
-		public System.Windows.Forms.MenuItem menuItem_Plugins;
 		public Hashtable plugInVariables=new Hashtable();
 		private Hashtable pluginMenuItemObject = new Hashtable();
-		public System.Windows.Forms.MenuItem menuItemFindNext;
-		private System.Windows.Forms.MenuItem menuItemCut;
 		private System.Windows.Forms.StatusBarPanel panel5;
-		private System.Windows.Forms.MenuItem menuItem20;
-		private System.Windows.Forms.MenuItem menuItemWorkSpaceExplorer;
-		private System.Windows.Forms.MenuItem menuItemCompare;
 		private System.Windows.Forms.ToolBarButton toolBarButtonStop;
-		private System.Windows.Forms.MenuItem menuItemStopQuery;
-	
-		public FrmQuery  ActiveQueryForm
+        private MenuItem menuItemNew;
+        private MenuItem menuItemOpen;
+        private MenuItem menuItem8;
+        private MenuItem menuItem_Save;
+        private MenuItem menuItem_SaveAs;
+        private MenuItem menuItem18;
+        private MenuItem miImportXMLStructure;
+        private MenuItem miImportXMLData;
+        private MenuItem menuItem17;
+        private MenuItem menuItem9;
+        private MenuItem menuItemClose;
+        private MenuItem menuItemCloseAll;
+        private MenuItem menuItem4;
+        private MenuItem menuRecentItems;
+        private MenuItem menuItem15;
+        private MenuItem menuItemExit;
+        private MenuItem menuItemFile;
+        private MenuItem miUndo;
+        private MenuItem menuItem7;
+        private MenuItem menuItemPaste;
+        private MenuItem menuItemCopy;
+        private MenuItem menuItemCut;
+        private MenuItem menuItem10;
+        private MenuItem menuItemFind;
+        public MenuItem menuItemFindNext;
+        private MenuItem menuItem14;
+        private MenuItem menuItemGoToLine;
+        private MenuItem menuItem19;
+        private MenuItem menuItemManageSnippets;
+        private MenuItem menuItem20;
+        private MenuItem menuItemCompare;
+        private MenuItem menuItem3;
+        private MenuItem menuItemPropertyWindow;
+        private MenuItem menuItemToolbox;
+        private MenuItem menuItemWorkSpaceExplorer;
+        private MenuItem menuItemOutputWindow;
+        private MenuItem menuItemTaskList;
+        private MenuItem menuItem13;
+        private MenuItem menuItem1;
+        private MenuItem menuItemToolBar;
+        private MenuItem menuItemStatusBar;
+        private MenuItem menuItemCloseOutputWindow;
+        private MenuItem menuItemView;
+        private MenuItem menuItem_InsertStatement;
+        private MenuItem menuItem_UpdateStatement;
+        private MenuItem menuItem5;
+        private MenuItem menuItemInsertHeader;
+        private MenuItem menuItemXmlDoc;
+        private MenuItem menuItem2;
+        private MenuItem menuItemGoToDefenition;
+        private MenuItem menuItemGoToReference;
+        private MenuItem menuItem16;
+        private MenuItem menuItemRunQuery;
+        private MenuItem menuItemRunCurrentQuery;
+        private MenuItem menuItemStopQuery;
+        private MenuItem menuItemRunQueryLine;
+        private MenuItem menuItem11;
+        private MenuItem menuItemEnterpriseManager;
+        private MenuItem menuItemProfiler;
+        private MenuItem menuItem12;
+        private MenuItem menuItemOptions;
+        private MenuItem menuItemTools;
+        public MenuItem menuItem_Plugins;
+        private MenuItem menuItemWindow;
+        private MenuItem menuItem_Help;
+        private MenuItem menuItem6;
+        private MenuItem menuItemAbout;
+        private MenuItem menuItemHelp;
+        public MainMenu mainMenu;
+
+        public FrmQuery  ActiveQueryForm
 		{
 			get
 			{
@@ -255,75 +255,6 @@ namespace QueryCommander
 		{
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            this.mainMenu = new System.Windows.Forms.MainMenu(this.components);
-            this.menuItemFile = new System.Windows.Forms.MenuItem();
-            this.menuItemNew = new System.Windows.Forms.MenuItem();
-            this.menuItemOpen = new System.Windows.Forms.MenuItem();
-            this.menuItem8 = new System.Windows.Forms.MenuItem();
-            this.menuItem_Save = new System.Windows.Forms.MenuItem();
-            this.menuItem_SaveAs = new System.Windows.Forms.MenuItem();
-            this.menuItem18 = new System.Windows.Forms.MenuItem();
-            this.menuItem17 = new System.Windows.Forms.MenuItem();
-            this.miImportXMLStructure = new System.Windows.Forms.MenuItem();
-            this.miImportXMLData = new System.Windows.Forms.MenuItem();
-            this.menuItem9 = new System.Windows.Forms.MenuItem();
-            this.menuItemClose = new System.Windows.Forms.MenuItem();
-            this.menuItemCloseAll = new System.Windows.Forms.MenuItem();
-            this.menuItem4 = new System.Windows.Forms.MenuItem();
-            this.menuRecentItems = new System.Windows.Forms.MenuItem();
-            this.menuItem15 = new System.Windows.Forms.MenuItem();
-            this.menuItemExit = new System.Windows.Forms.MenuItem();
-            this.menuItem3 = new System.Windows.Forms.MenuItem();
-            this.miUndo = new System.Windows.Forms.MenuItem();
-            this.menuItem7 = new System.Windows.Forms.MenuItem();
-            this.menuItemPaste = new System.Windows.Forms.MenuItem();
-            this.menuItemCopy = new System.Windows.Forms.MenuItem();
-            this.menuItemCut = new System.Windows.Forms.MenuItem();
-            this.menuItem10 = new System.Windows.Forms.MenuItem();
-            this.menuItemFind = new System.Windows.Forms.MenuItem();
-            this.menuItemFindNext = new System.Windows.Forms.MenuItem();
-            this.menuItem14 = new System.Windows.Forms.MenuItem();
-            this.menuItemGoToLine = new System.Windows.Forms.MenuItem();
-            this.menuItem19 = new System.Windows.Forms.MenuItem();
-            this.menuItemManageSnippets = new System.Windows.Forms.MenuItem();
-            this.menuItem20 = new System.Windows.Forms.MenuItem();
-            this.menuItemCompare = new System.Windows.Forms.MenuItem();
-            this.menuItemView = new System.Windows.Forms.MenuItem();
-            this.menuItemPropertyWindow = new System.Windows.Forms.MenuItem();
-            this.menuItemToolbox = new System.Windows.Forms.MenuItem();
-            this.menuItemWorkSpaceExplorer = new System.Windows.Forms.MenuItem();
-            this.menuItemOutputWindow = new System.Windows.Forms.MenuItem();
-            this.menuItemTaskList = new System.Windows.Forms.MenuItem();
-            this.menuItem13 = new System.Windows.Forms.MenuItem();
-            this.menuItem1 = new System.Windows.Forms.MenuItem();
-            this.menuItemToolBar = new System.Windows.Forms.MenuItem();
-            this.menuItemStatusBar = new System.Windows.Forms.MenuItem();
-            this.menuItemCloseOutputWindow = new System.Windows.Forms.MenuItem();
-            this.menuItemTools = new System.Windows.Forms.MenuItem();
-            this.menuItem_InsertStatement = new System.Windows.Forms.MenuItem();
-            this.menuItem_UpdateStatement = new System.Windows.Forms.MenuItem();
-            this.menuItem5 = new System.Windows.Forms.MenuItem();
-            this.menuItemInsertHeader = new System.Windows.Forms.MenuItem();
-            this.menuItemXmlDoc = new System.Windows.Forms.MenuItem();
-            this.menuItem2 = new System.Windows.Forms.MenuItem();
-            this.menuItemGoToDefenition = new System.Windows.Forms.MenuItem();
-            this.menuItemGoToReference = new System.Windows.Forms.MenuItem();
-            this.menuItem16 = new System.Windows.Forms.MenuItem();
-            this.menuItemRunQuery = new System.Windows.Forms.MenuItem();
-            this.menuItemRunCurrentQuery = new System.Windows.Forms.MenuItem();
-            this.menuItemStopQuery = new System.Windows.Forms.MenuItem();
-            this.menuItemRunQueryLine = new System.Windows.Forms.MenuItem();
-            this.menuItem11 = new System.Windows.Forms.MenuItem();
-            this.menuItemEnterpriseManager = new System.Windows.Forms.MenuItem();
-            this.menuItemProfiler = new System.Windows.Forms.MenuItem();
-            this.menuItem12 = new System.Windows.Forms.MenuItem();
-            this.menuItemOptions = new System.Windows.Forms.MenuItem();
-            this.menuItem_Plugins = new System.Windows.Forms.MenuItem();
-            this.menuItemWindow = new System.Windows.Forms.MenuItem();
-            this.menuItemHelp = new System.Windows.Forms.MenuItem();
-            this.menuItem_Help = new System.Windows.Forms.MenuItem();
-            this.menuItem6 = new System.Windows.Forms.MenuItem();
-            this.menuItemAbout = new System.Windows.Forms.MenuItem();
             this.statusBar = new System.Windows.Forms.StatusBar();
             this.panel1 = new System.Windows.Forms.StatusBarPanel();
             this.panel2 = new System.Windows.Forms.StatusBarPanel();
@@ -350,6 +281,75 @@ namespace QueryCommander
             this.toolBarButtonSeparator4 = new System.Windows.Forms.ToolBarButton();
             this.timer_StartUp = new System.Windows.Forms.Timer(this.components);
             this.menuExtender = new Chris.Beckett.MenuImageLib.MenuImage(this.components);
+            this.menuItemNew = new System.Windows.Forms.MenuItem();
+            this.menuItemOpen = new System.Windows.Forms.MenuItem();
+            this.menuItem8 = new System.Windows.Forms.MenuItem();
+            this.menuItem_Save = new System.Windows.Forms.MenuItem();
+            this.menuItem_SaveAs = new System.Windows.Forms.MenuItem();
+            this.menuItem18 = new System.Windows.Forms.MenuItem();
+            this.miImportXMLStructure = new System.Windows.Forms.MenuItem();
+            this.miImportXMLData = new System.Windows.Forms.MenuItem();
+            this.menuItem17 = new System.Windows.Forms.MenuItem();
+            this.menuItem9 = new System.Windows.Forms.MenuItem();
+            this.menuItemClose = new System.Windows.Forms.MenuItem();
+            this.menuItemCloseAll = new System.Windows.Forms.MenuItem();
+            this.menuItem4 = new System.Windows.Forms.MenuItem();
+            this.menuRecentItems = new System.Windows.Forms.MenuItem();
+            this.menuItem15 = new System.Windows.Forms.MenuItem();
+            this.menuItemExit = new System.Windows.Forms.MenuItem();
+            this.miUndo = new System.Windows.Forms.MenuItem();
+            this.menuItem7 = new System.Windows.Forms.MenuItem();
+            this.menuItemPaste = new System.Windows.Forms.MenuItem();
+            this.menuItemCopy = new System.Windows.Forms.MenuItem();
+            this.menuItemCut = new System.Windows.Forms.MenuItem();
+            this.menuItem10 = new System.Windows.Forms.MenuItem();
+            this.menuItemFind = new System.Windows.Forms.MenuItem();
+            this.menuItemFindNext = new System.Windows.Forms.MenuItem();
+            this.menuItem14 = new System.Windows.Forms.MenuItem();
+            this.menuItemGoToLine = new System.Windows.Forms.MenuItem();
+            this.menuItem19 = new System.Windows.Forms.MenuItem();
+            this.menuItemManageSnippets = new System.Windows.Forms.MenuItem();
+            this.menuItem20 = new System.Windows.Forms.MenuItem();
+            this.menuItemCompare = new System.Windows.Forms.MenuItem();
+            this.menuItemPropertyWindow = new System.Windows.Forms.MenuItem();
+            this.menuItemToolbox = new System.Windows.Forms.MenuItem();
+            this.menuItemWorkSpaceExplorer = new System.Windows.Forms.MenuItem();
+            this.menuItemOutputWindow = new System.Windows.Forms.MenuItem();
+            this.menuItemTaskList = new System.Windows.Forms.MenuItem();
+            this.menuItem13 = new System.Windows.Forms.MenuItem();
+            this.menuItem1 = new System.Windows.Forms.MenuItem();
+            this.menuItemToolBar = new System.Windows.Forms.MenuItem();
+            this.menuItemStatusBar = new System.Windows.Forms.MenuItem();
+            this.menuItemCloseOutputWindow = new System.Windows.Forms.MenuItem();
+            this.menuItem_InsertStatement = new System.Windows.Forms.MenuItem();
+            this.menuItem_UpdateStatement = new System.Windows.Forms.MenuItem();
+            this.menuItem5 = new System.Windows.Forms.MenuItem();
+            this.menuItemInsertHeader = new System.Windows.Forms.MenuItem();
+            this.menuItemXmlDoc = new System.Windows.Forms.MenuItem();
+            this.menuItem2 = new System.Windows.Forms.MenuItem();
+            this.menuItemGoToDefenition = new System.Windows.Forms.MenuItem();
+            this.menuItemGoToReference = new System.Windows.Forms.MenuItem();
+            this.menuItem16 = new System.Windows.Forms.MenuItem();
+            this.menuItemRunQuery = new System.Windows.Forms.MenuItem();
+            this.menuItemRunCurrentQuery = new System.Windows.Forms.MenuItem();
+            this.menuItemStopQuery = new System.Windows.Forms.MenuItem();
+            this.menuItemRunQueryLine = new System.Windows.Forms.MenuItem();
+            this.menuItem11 = new System.Windows.Forms.MenuItem();
+            this.menuItemEnterpriseManager = new System.Windows.Forms.MenuItem();
+            this.menuItemProfiler = new System.Windows.Forms.MenuItem();
+            this.menuItem12 = new System.Windows.Forms.MenuItem();
+            this.menuItemOptions = new System.Windows.Forms.MenuItem();
+            this.menuItem_Help = new System.Windows.Forms.MenuItem();
+            this.menuItem6 = new System.Windows.Forms.MenuItem();
+            this.menuItemAbout = new System.Windows.Forms.MenuItem();
+            this.menuItemFile = new System.Windows.Forms.MenuItem();
+            this.menuItem3 = new System.Windows.Forms.MenuItem();
+            this.menuItemView = new System.Windows.Forms.MenuItem();
+            this.menuItemTools = new System.Windows.Forms.MenuItem();
+            this.menuItem_Plugins = new System.Windows.Forms.MenuItem();
+            this.menuItemWindow = new System.Windows.Forms.MenuItem();
+            this.menuItemHelp = new System.Windows.Forms.MenuItem();
+            this.mainMenu = new System.Windows.Forms.MainMenu(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.panel1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panel2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panel3)).BeginInit();
@@ -357,38 +357,226 @@ namespace QueryCommander
             ((System.ComponentModel.ISupportInitialize)(this.panel5)).BeginInit();
             this.SuspendLayout();
             // 
-            // mainMenu
+            // statusBar
             // 
-            this.mainMenu.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
-            this.menuItemFile,
-            this.menuItem3,
-            this.menuItemView,
-            this.menuItemTools,
-            this.menuItem_Plugins,
-            this.menuItemWindow,
-            this.menuItemHelp});
+            this.statusBar.Location = new System.Drawing.Point(0, 817);
+            this.statusBar.Name = "statusBar";
+            this.statusBar.Panels.AddRange(new System.Windows.Forms.StatusBarPanel[] {
+            this.panel1,
+            this.panel2,
+            this.panel3,
+            this.panel4,
+            this.panel5});
+            this.statusBar.ShowPanels = true;
+            this.statusBar.Size = new System.Drawing.Size(1351, 20);
+            this.statusBar.TabIndex = 4;
             // 
-            // menuItemFile
+            // panel1
             // 
-            this.menuItemFile.Index = 0;
-            this.menuItemFile.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
-            this.menuItemNew,
-            this.menuItemOpen,
-            this.menuItem8,
-            this.menuItem_Save,
-            this.menuItem_SaveAs,
-            this.menuItem18,
-            this.menuItem17,
-            this.menuItem9,
-            this.menuItemClose,
-            this.menuItemCloseAll,
-            this.menuItem4,
-            this.menuRecentItems,
-            this.menuItem15,
-            this.menuItemExit});
-            this.menuItemFile.MergeType = System.Windows.Forms.MenuMerge.MergeItems;
-            this.menuItemFile.Text = "&File";
-            this.menuItemFile.Popup += new System.EventHandler(this.menuItemFile_Popup);
+            this.panel1.Name = "panel1";
+            this.panel1.Text = "QueryCommander";
+            this.panel1.Width = 160;
+            // 
+            // panel2
+            // 
+            this.panel2.Name = "panel2";
+            this.panel2.Width = 150;
+            // 
+            // panel3
+            // 
+            this.panel3.Name = "panel3";
+            this.panel3.Width = 300;
+            // 
+            // panel4
+            // 
+            this.panel4.Name = "panel4";
+            this.panel4.Width = 500;
+            // 
+            // panel5
+            // 
+            this.panel5.Name = "panel5";
+            // 
+            // imageList
+            // 
+            this.imageList.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList.ImageStream")));
+            this.imageList.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList.Images.SetKeyName(0, "");
+            this.imageList.Images.SetKeyName(1, "");
+            this.imageList.Images.SetKeyName(2, "");
+            this.imageList.Images.SetKeyName(3, "");
+            this.imageList.Images.SetKeyName(4, "");
+            this.imageList.Images.SetKeyName(5, "");
+            this.imageList.Images.SetKeyName(6, "");
+            this.imageList.Images.SetKeyName(7, "");
+            this.imageList.Images.SetKeyName(8, "");
+            this.imageList.Images.SetKeyName(9, "");
+            this.imageList.Images.SetKeyName(10, "");
+            this.imageList.Images.SetKeyName(11, "");
+            this.imageList.Images.SetKeyName(12, "");
+            this.imageList.Images.SetKeyName(13, "");
+            this.imageList.Images.SetKeyName(14, "");
+            this.imageList.Images.SetKeyName(15, "");
+            this.imageList.Images.SetKeyName(16, "");
+            this.imageList.Images.SetKeyName(17, "");
+            this.imageList.Images.SetKeyName(18, "");
+            this.imageList.Images.SetKeyName(19, "");
+            this.imageList.Images.SetKeyName(20, "");
+            this.imageList.Images.SetKeyName(21, "");
+            this.imageList.Images.SetKeyName(22, "");
+            this.imageList.Images.SetKeyName(23, "");
+            this.imageList.Images.SetKeyName(24, "");
+            this.imageList.Images.SetKeyName(25, "");
+            this.imageList.Images.SetKeyName(26, "");
+            this.imageList.Images.SetKeyName(27, "");
+            this.imageList.Images.SetKeyName(28, "");
+            // 
+            // toolBar
+            // 
+            this.toolBar.Appearance = System.Windows.Forms.ToolBarAppearance.Flat;
+            this.toolBar.Buttons.AddRange(new System.Windows.Forms.ToolBarButton[] {
+            this.toolBarButtonNew,
+            this.toolBarButtonOpen,
+            this.toolBarButtonSolutionExplorer,
+            this.toolBarButtonSeparator,
+            this.toolBarButtonPropertyWindow,
+            this.toolBarButtonToolbox,
+            this.toolBarButtonSeparator2,
+            this.toolBarButtonOutputWindow,
+            this.toolBarButtonTaskList,
+            this.toolBarButtonRun,
+            this.toolBarButtonStop,
+            this.toolBarButtonSeparator3,
+            this.toolBarEnterpriseManager,
+            this.toolBarprofiler,
+            this.toolBarButtonSeparator4});
+            this.toolBar.ButtonSize = new System.Drawing.Size(150, 36);
+            this.toolBar.DropDownArrows = true;
+            this.toolBar.ImageList = this.imageList;
+            this.toolBar.Location = new System.Drawing.Point(0, 0);
+            this.toolBar.Name = "toolBar";
+            this.toolBar.ShowToolTips = true;
+            this.toolBar.Size = new System.Drawing.Size(1351, 45);
+            this.toolBar.TabIndex = 6;
+            this.toolBar.ButtonClick += new System.Windows.Forms.ToolBarButtonClickEventHandler(this.toolBar_ButtonClick);
+            // 
+            // toolBarButtonNew
+            // 
+            this.toolBarButtonNew.ImageIndex = 0;
+            this.toolBarButtonNew.Name = "toolBarButtonNew";
+            this.toolBarButtonNew.Text = "New";
+            this.toolBarButtonNew.ToolTipText = "New";
+            this.toolBarButtonNew.Visible = false;
+            // 
+            // toolBarButtonOpen
+            // 
+            this.toolBarButtonOpen.ImageIndex = 1;
+            this.toolBarButtonOpen.Name = "toolBarButtonOpen";
+            this.toolBarButtonOpen.Text = "Open";
+            this.toolBarButtonOpen.ToolTipText = "Open";
+            this.toolBarButtonOpen.Visible = false;
+            // 
+            // toolBarButtonSolutionExplorer
+            // 
+            this.toolBarButtonSolutionExplorer.ImageIndex = 2;
+            this.toolBarButtonSolutionExplorer.Name = "toolBarButtonSolutionExplorer";
+            this.toolBarButtonSolutionExplorer.Text = "dd";
+            this.toolBarButtonSolutionExplorer.ToolTipText = "Server Explorer";
+            this.toolBarButtonSolutionExplorer.Visible = false;
+            // 
+            // toolBarButtonSeparator
+            // 
+            this.toolBarButtonSeparator.Name = "toolBarButtonSeparator";
+            this.toolBarButtonSeparator.Style = System.Windows.Forms.ToolBarButtonStyle.Separator;
+            this.toolBarButtonSeparator.Visible = false;
+            // 
+            // toolBarButtonPropertyWindow
+            // 
+            this.toolBarButtonPropertyWindow.ImageIndex = 3;
+            this.toolBarButtonPropertyWindow.Name = "toolBarButtonPropertyWindow";
+            this.toolBarButtonPropertyWindow.ToolTipText = "Property Window";
+            this.toolBarButtonPropertyWindow.Visible = false;
+            // 
+            // toolBarButtonToolbox
+            // 
+            this.toolBarButtonToolbox.ImageIndex = 2;
+            this.toolBarButtonToolbox.Name = "toolBarButtonToolbox";
+            this.toolBarButtonToolbox.Text = "Browse servers";
+            this.toolBarButtonToolbox.ToolTipText = "Microsoft SQL Servers";
+            // 
+            // toolBarButtonSeparator2
+            // 
+            this.toolBarButtonSeparator2.Name = "toolBarButtonSeparator2";
+            this.toolBarButtonSeparator2.Style = System.Windows.Forms.ToolBarButtonStyle.Separator;
+            this.toolBarButtonSeparator2.Visible = false;
+            // 
+            // toolBarButtonOutputWindow
+            // 
+            this.toolBarButtonOutputWindow.ImageIndex = 5;
+            this.toolBarButtonOutputWindow.Name = "toolBarButtonOutputWindow";
+            this.toolBarButtonOutputWindow.ToolTipText = "Output Window";
+            this.toolBarButtonOutputWindow.Visible = false;
+            // 
+            // toolBarButtonTaskList
+            // 
+            this.toolBarButtonTaskList.ImageIndex = 6;
+            this.toolBarButtonTaskList.Name = "toolBarButtonTaskList";
+            this.toolBarButtonTaskList.ToolTipText = "Task List";
+            this.toolBarButtonTaskList.Visible = false;
+            // 
+            // toolBarButtonRun
+            // 
+            this.toolBarButtonRun.DropDownMenu = this.contextMenuDataBases;
+            this.toolBarButtonRun.ImageIndex = 12;
+            this.toolBarButtonRun.Name = "toolBarButtonRun";
+            this.toolBarButtonRun.Text = "Run Query";
+            this.toolBarButtonRun.ToolTipText = "Run query";
+            // 
+            // contextMenuDataBases
+            // 
+            this.contextMenuDataBases.Popup += new System.EventHandler(this.contextMenuDataBases_Popup);
+            // 
+            // toolBarButtonStop
+            // 
+            this.toolBarButtonStop.ImageIndex = 28;
+            this.toolBarButtonStop.Name = "toolBarButtonStop";
+            this.toolBarButtonStop.Text = "Stop Query";
+            this.toolBarButtonStop.ToolTipText = "Stop current execution";
+            // 
+            // toolBarButtonSeparator3
+            // 
+            this.toolBarButtonSeparator3.Name = "toolBarButtonSeparator3";
+            this.toolBarButtonSeparator3.Style = System.Windows.Forms.ToolBarButtonStyle.Separator;
+            this.toolBarButtonSeparator3.Visible = false;
+            // 
+            // toolBarEnterpriseManager
+            // 
+            this.toolBarEnterpriseManager.ImageIndex = 13;
+            this.toolBarEnterpriseManager.Name = "toolBarEnterpriseManager";
+            this.toolBarEnterpriseManager.Text = "Enterprise Manager";
+            this.toolBarEnterpriseManager.ToolTipText = "SQL Server Enterprise Manager";
+            this.toolBarEnterpriseManager.Visible = false;
+            // 
+            // toolBarprofiler
+            // 
+            this.toolBarprofiler.ImageIndex = 14;
+            this.toolBarprofiler.Name = "toolBarprofiler";
+            this.toolBarprofiler.Text = "SQL Profiler";
+            this.toolBarprofiler.ToolTipText = "SQL Profiler";
+            this.toolBarprofiler.Visible = false;
+            // 
+            // toolBarButtonSeparator4
+            // 
+            this.toolBarButtonSeparator4.Name = "toolBarButtonSeparator4";
+            this.toolBarButtonSeparator4.Style = System.Windows.Forms.ToolBarButtonStyle.Separator;
+            this.toolBarButtonSeparator4.Visible = false;
+            // 
+            // timer_StartUp
+            // 
+            this.timer_StartUp.Tick += new System.EventHandler(this.timer_StartUp_Tick);
+            // 
+            // menuExtender
+            // 
+            this.menuExtender.ImageList = this.imageList;
             // 
             // menuItemNew
             // 
@@ -439,16 +627,6 @@ namespace QueryCommander
             this.menuItem18.OwnerDraw = true;
             this.menuItem18.Text = "-";
             // 
-            // menuItem17
-            // 
-            this.menuItem17.Index = 6;
-            this.menuExtender.SetMenuImage(this.menuItem17, null);
-            this.menuItem17.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
-            this.miImportXMLStructure,
-            this.miImportXMLData});
-            this.menuItem17.OwnerDraw = true;
-            this.menuItem17.Text = "&Import";
-            // 
             // miImportXMLStructure
             // 
             this.miImportXMLStructure.Index = 0;
@@ -464,6 +642,16 @@ namespace QueryCommander
             this.miImportXMLData.OwnerDraw = true;
             this.miImportXMLData.Text = "XML Data";
             this.miImportXMLData.Click += new System.EventHandler(this.miImportXMLData_Click);
+            // 
+            // menuItem17
+            // 
+            this.menuItem17.Index = 6;
+            this.menuExtender.SetMenuImage(this.menuItem17, null);
+            this.menuItem17.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
+            this.miImportXMLStructure,
+            this.miImportXMLData});
+            this.menuItem17.OwnerDraw = true;
+            this.menuItem17.Text = "&Import";
             // 
             // menuItem9
             // 
@@ -518,27 +706,6 @@ namespace QueryCommander
             this.menuItemExit.Shortcut = System.Windows.Forms.Shortcut.AltF4;
             this.menuItemExit.Text = "&Exit";
             this.menuItemExit.Click += new System.EventHandler(this.menuItemExit_Click);
-            // 
-            // menuItem3
-            // 
-            this.menuItem3.Index = 1;
-            this.menuItem3.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
-            this.miUndo,
-            this.menuItem7,
-            this.menuItemPaste,
-            this.menuItemCopy,
-            this.menuItemCut,
-            this.menuItem10,
-            this.menuItemFind,
-            this.menuItemFindNext,
-            this.menuItem14,
-            this.menuItemGoToLine,
-            this.menuItem19,
-            this.menuItemManageSnippets,
-            this.menuItem20,
-            this.menuItemCompare});
-            this.menuItem3.MergeType = System.Windows.Forms.MenuMerge.MergeItems;
-            this.menuItem3.Text = "&Edit";
             // 
             // miUndo
             // 
@@ -656,24 +823,6 @@ namespace QueryCommander
             this.menuItemCompare.Text = "Compare ";
             this.menuItemCompare.Click += new System.EventHandler(this.menuItemCompare_Click);
             // 
-            // menuItemView
-            // 
-            this.menuItemView.Index = 2;
-            this.menuItemView.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
-            this.menuItemPropertyWindow,
-            this.menuItemToolbox,
-            this.menuItemWorkSpaceExplorer,
-            this.menuItemOutputWindow,
-            this.menuItemTaskList,
-            this.menuItem13,
-            this.menuItem1,
-            this.menuItemToolBar,
-            this.menuItemStatusBar,
-            this.menuItemCloseOutputWindow});
-            this.menuItemView.MergeOrder = 1;
-            this.menuItemView.MergeType = System.Windows.Forms.MenuMerge.MergeItems;
-            this.menuItemView.Text = "&View";
-            // 
             // menuItemPropertyWindow
             // 
             this.menuItemPropertyWindow.Enabled = false;
@@ -757,32 +906,6 @@ namespace QueryCommander
             this.menuItemCloseOutputWindow.Shortcut = System.Windows.Forms.Shortcut.CtrlR;
             this.menuItemCloseOutputWindow.Text = "&Close Output Window";
             this.menuItemCloseOutputWindow.Click += new System.EventHandler(this.menuItemCloseOutputWindow_Click);
-            // 
-            // menuItemTools
-            // 
-            this.menuItemTools.Index = 3;
-            this.menuItemTools.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
-            this.menuItem_InsertStatement,
-            this.menuItem_UpdateStatement,
-            this.menuItem5,
-            this.menuItemInsertHeader,
-            this.menuItemXmlDoc,
-            this.menuItem2,
-            this.menuItemGoToDefenition,
-            this.menuItemGoToReference,
-            this.menuItem16,
-            this.menuItemRunQuery,
-            this.menuItemRunCurrentQuery,
-            this.menuItemStopQuery,
-            this.menuItemRunQueryLine,
-            this.menuItem11,
-            this.menuItemEnterpriseManager,
-            this.menuItemProfiler,
-            this.menuItem12,
-            this.menuItemOptions});
-            this.menuItemTools.MergeOrder = 2;
-            this.menuItemTools.MergeType = System.Windows.Forms.MenuMerge.MergeItems;
-            this.menuItemTools.Text = "&Tools";
             // 
             // menuItem_InsertStatement
             // 
@@ -930,6 +1053,118 @@ namespace QueryCommander
             this.menuItemOptions.Text = "&Options";
             this.menuItemOptions.Click += new System.EventHandler(this.menuItemOptions_Click);
             // 
+            // menuItem_Help
+            // 
+            this.menuItem_Help.Index = 0;
+            this.menuExtender.SetMenuImage(this.menuItem_Help, null);
+            this.menuItem_Help.OwnerDraw = true;
+            this.menuItem_Help.Shortcut = System.Windows.Forms.Shortcut.F1;
+            this.menuItem_Help.Text = "&Transact-SQL Help";
+            this.menuItem_Help.Click += new System.EventHandler(this.menuItem_Help_Click);
+            // 
+            // menuItem6
+            // 
+            this.menuItem6.Index = 1;
+            this.menuExtender.SetMenuImage(this.menuItem6, null);
+            this.menuItem6.OwnerDraw = true;
+            this.menuItem6.Text = "-";
+            // 
+            // menuItemAbout
+            // 
+            this.menuItemAbout.Index = 2;
+            this.menuExtender.SetMenuImage(this.menuItemAbout, null);
+            this.menuItemAbout.OwnerDraw = true;
+            this.menuItemAbout.Text = "&About QueryCommander...";
+            this.menuItemAbout.Click += new System.EventHandler(this.menuItemAbout_Click);
+            // 
+            // menuItemFile
+            // 
+            this.menuItemFile.Index = 0;
+            this.menuItemFile.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
+            this.menuItemNew,
+            this.menuItemOpen,
+            this.menuItem8,
+            this.menuItem_Save,
+            this.menuItem_SaveAs,
+            this.menuItem18,
+            this.menuItem17,
+            this.menuItem9,
+            this.menuItemClose,
+            this.menuItemCloseAll,
+            this.menuItem4,
+            this.menuRecentItems,
+            this.menuItem15,
+            this.menuItemExit});
+            this.menuItemFile.MergeType = System.Windows.Forms.MenuMerge.MergeItems;
+            this.menuItemFile.Text = "&File";
+            this.menuItemFile.Visible = false;
+            this.menuItemFile.Popup += new System.EventHandler(this.menuItemFile_Popup);
+            // 
+            // menuItem3
+            // 
+            this.menuItem3.Index = 1;
+            this.menuItem3.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
+            this.miUndo,
+            this.menuItem7,
+            this.menuItemPaste,
+            this.menuItemCopy,
+            this.menuItemCut,
+            this.menuItem10,
+            this.menuItemFind,
+            this.menuItemFindNext,
+            this.menuItem14,
+            this.menuItemGoToLine,
+            this.menuItem19,
+            this.menuItemManageSnippets,
+            this.menuItem20,
+            this.menuItemCompare});
+            this.menuItem3.MergeType = System.Windows.Forms.MenuMerge.MergeItems;
+            this.menuItem3.Text = "&Edit";
+            // 
+            // menuItemView
+            // 
+            this.menuItemView.Index = 2;
+            this.menuItemView.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
+            this.menuItemPropertyWindow,
+            this.menuItemToolbox,
+            this.menuItemWorkSpaceExplorer,
+            this.menuItemOutputWindow,
+            this.menuItemTaskList,
+            this.menuItem13,
+            this.menuItem1,
+            this.menuItemToolBar,
+            this.menuItemStatusBar,
+            this.menuItemCloseOutputWindow});
+            this.menuItemView.MergeOrder = 1;
+            this.menuItemView.MergeType = System.Windows.Forms.MenuMerge.MergeItems;
+            this.menuItemView.Text = "&View";
+            // 
+            // menuItemTools
+            // 
+            this.menuItemTools.Index = 3;
+            this.menuItemTools.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
+            this.menuItem_InsertStatement,
+            this.menuItem_UpdateStatement,
+            this.menuItem5,
+            this.menuItemInsertHeader,
+            this.menuItemXmlDoc,
+            this.menuItem2,
+            this.menuItemGoToDefenition,
+            this.menuItemGoToReference,
+            this.menuItem16,
+            this.menuItemRunQuery,
+            this.menuItemRunCurrentQuery,
+            this.menuItemStopQuery,
+            this.menuItemRunQueryLine,
+            this.menuItem11,
+            this.menuItemEnterpriseManager,
+            this.menuItemProfiler,
+            this.menuItem12,
+            this.menuItemOptions});
+            this.menuItemTools.MergeOrder = 2;
+            this.menuItemTools.MergeType = System.Windows.Forms.MenuMerge.MergeItems;
+            this.menuItemTools.Text = "&Tools";
+            // 
             // menuItem_Plugins
             // 
             this.menuItem_Plugins.Index = 4;
@@ -955,257 +1190,28 @@ namespace QueryCommander
             this.menuItemHelp.MergeType = System.Windows.Forms.MenuMerge.MergeItems;
             this.menuItemHelp.Text = "&Help";
             // 
-            // menuItem_Help
+            // mainMenu
             // 
-            this.menuItem_Help.Index = 0;
-            this.menuExtender.SetMenuImage(this.menuItem_Help, null);
-            this.menuItem_Help.OwnerDraw = true;
-            this.menuItem_Help.Shortcut = System.Windows.Forms.Shortcut.F1;
-            this.menuItem_Help.Text = "&Transact-SQL Help";
-            this.menuItem_Help.Click += new System.EventHandler(this.menuItem_Help_Click);
-            // 
-            // menuItem6
-            // 
-            this.menuItem6.Index = 1;
-            this.menuExtender.SetMenuImage(this.menuItem6, null);
-            this.menuItem6.OwnerDraw = true;
-            this.menuItem6.Text = "-";
-            // 
-            // menuItemAbout
-            // 
-            this.menuItemAbout.Index = 2;
-            this.menuExtender.SetMenuImage(this.menuItemAbout, null);
-            this.menuItemAbout.OwnerDraw = true;
-            this.menuItemAbout.Text = "&About QueryCommander...";
-            this.menuItemAbout.Click += new System.EventHandler(this.menuItemAbout_Click);
-            // 
-            // statusBar
-            // 
-            this.statusBar.Location = new System.Drawing.Point(0, 651);
-            this.statusBar.Name = "statusBar";
-            this.statusBar.Panels.AddRange(new System.Windows.Forms.StatusBarPanel[] {
-            this.panel1,
-            this.panel2,
-            this.panel3,
-            this.panel4,
-            this.panel5});
-            this.statusBar.ShowPanels = true;
-            this.statusBar.Size = new System.Drawing.Size(855, 21);
-            this.statusBar.TabIndex = 4;
-            // 
-            // panel1
-            // 
-            this.panel1.Name = "panel1";
-            this.panel1.Text = "QueryCommander";
-            this.panel1.Width = 160;
-            // 
-            // panel2
-            // 
-            this.panel2.Name = "panel2";
-            this.panel2.Width = 150;
-            // 
-            // panel3
-            // 
-            this.panel3.Name = "panel3";
-            this.panel3.Width = 300;
-            // 
-            // panel4
-            // 
-            this.panel4.Name = "panel4";
-            this.panel4.Width = 500;
-            // 
-            // panel5
-            // 
-            this.panel5.Name = "panel5";
-            // 
-            // imageList
-            // 
-            this.imageList.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList.ImageStream")));
-            this.imageList.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageList.Images.SetKeyName(0, "");
-            this.imageList.Images.SetKeyName(1, "");
-            this.imageList.Images.SetKeyName(2, "");
-            this.imageList.Images.SetKeyName(3, "");
-            this.imageList.Images.SetKeyName(4, "");
-            this.imageList.Images.SetKeyName(5, "");
-            this.imageList.Images.SetKeyName(6, "");
-            this.imageList.Images.SetKeyName(7, "");
-            this.imageList.Images.SetKeyName(8, "");
-            this.imageList.Images.SetKeyName(9, "");
-            this.imageList.Images.SetKeyName(10, "");
-            this.imageList.Images.SetKeyName(11, "");
-            this.imageList.Images.SetKeyName(12, "");
-            this.imageList.Images.SetKeyName(13, "");
-            this.imageList.Images.SetKeyName(14, "");
-            this.imageList.Images.SetKeyName(15, "");
-            this.imageList.Images.SetKeyName(16, "");
-            this.imageList.Images.SetKeyName(17, "");
-            this.imageList.Images.SetKeyName(18, "");
-            this.imageList.Images.SetKeyName(19, "");
-            this.imageList.Images.SetKeyName(20, "");
-            this.imageList.Images.SetKeyName(21, "");
-            this.imageList.Images.SetKeyName(22, "");
-            this.imageList.Images.SetKeyName(23, "");
-            this.imageList.Images.SetKeyName(24, "");
-            this.imageList.Images.SetKeyName(25, "");
-            this.imageList.Images.SetKeyName(26, "");
-            this.imageList.Images.SetKeyName(27, "");
-            this.imageList.Images.SetKeyName(28, "");
-            // 
-            // toolBar
-            // 
-            this.toolBar.Appearance = System.Windows.Forms.ToolBarAppearance.Flat;
-            this.toolBar.Buttons.AddRange(new System.Windows.Forms.ToolBarButton[] {
-            this.toolBarButtonNew,
-            this.toolBarButtonOpen,
-            this.toolBarButtonSolutionExplorer,
-            this.toolBarButtonSeparator,
-            this.toolBarButtonPropertyWindow,
-            this.toolBarButtonToolbox,
-            this.toolBarButtonSeparator2,
-            this.toolBarButtonOutputWindow,
-            this.toolBarButtonTaskList,
-            this.toolBarButtonRun,
-            this.toolBarButtonStop,
-            this.toolBarButtonSeparator3,
-            this.toolBarEnterpriseManager,
-            this.toolBarprofiler,
-            this.toolBarButtonSeparator4});
-            this.toolBar.ButtonSize = new System.Drawing.Size(150, 36);
-            this.toolBar.DropDownArrows = true;
-            this.toolBar.ImageList = this.imageList;
-            this.toolBar.Location = new System.Drawing.Point(0, 0);
-            this.toolBar.Name = "toolBar";
-            this.toolBar.ShowToolTips = true;
-            this.toolBar.Size = new System.Drawing.Size(855, 50);
-            this.toolBar.TabIndex = 6;
-            this.toolBar.ButtonClick += new System.Windows.Forms.ToolBarButtonClickEventHandler(this.toolBar_ButtonClick);
-            // 
-            // toolBarButtonNew
-            // 
-            this.toolBarButtonNew.ImageIndex = 0;
-            this.toolBarButtonNew.Name = "toolBarButtonNew";
-            this.toolBarButtonNew.Text = "New";
-            this.toolBarButtonNew.ToolTipText = "New";
-            // 
-            // toolBarButtonOpen
-            // 
-            this.toolBarButtonOpen.ImageIndex = 1;
-            this.toolBarButtonOpen.Name = "toolBarButtonOpen";
-            this.toolBarButtonOpen.Text = "Open";
-            this.toolBarButtonOpen.ToolTipText = "Open";
-            // 
-            // toolBarButtonSolutionExplorer
-            // 
-            this.toolBarButtonSolutionExplorer.ImageIndex = 2;
-            this.toolBarButtonSolutionExplorer.Name = "toolBarButtonSolutionExplorer";
-            this.toolBarButtonSolutionExplorer.Text = "dd";
-            this.toolBarButtonSolutionExplorer.ToolTipText = "Server Explorer";
-            this.toolBarButtonSolutionExplorer.Visible = false;
-            // 
-            // toolBarButtonSeparator
-            // 
-            this.toolBarButtonSeparator.Name = "toolBarButtonSeparator";
-            this.toolBarButtonSeparator.Style = System.Windows.Forms.ToolBarButtonStyle.Separator;
-            this.toolBarButtonSeparator.Visible = false;
-            // 
-            // toolBarButtonPropertyWindow
-            // 
-            this.toolBarButtonPropertyWindow.ImageIndex = 3;
-            this.toolBarButtonPropertyWindow.Name = "toolBarButtonPropertyWindow";
-            this.toolBarButtonPropertyWindow.ToolTipText = "Property Window";
-            this.toolBarButtonPropertyWindow.Visible = false;
-            // 
-            // toolBarButtonToolbox
-            // 
-            this.toolBarButtonToolbox.ImageIndex = 2;
-            this.toolBarButtonToolbox.Name = "toolBarButtonToolbox";
-            this.toolBarButtonToolbox.Text = "Browse servers";
-            this.toolBarButtonToolbox.ToolTipText = "Microsoft SQL Servers";
-            // 
-            // toolBarButtonSeparator2
-            // 
-            this.toolBarButtonSeparator2.Name = "toolBarButtonSeparator2";
-            this.toolBarButtonSeparator2.Style = System.Windows.Forms.ToolBarButtonStyle.Separator;
-            // 
-            // toolBarButtonOutputWindow
-            // 
-            this.toolBarButtonOutputWindow.ImageIndex = 5;
-            this.toolBarButtonOutputWindow.Name = "toolBarButtonOutputWindow";
-            this.toolBarButtonOutputWindow.ToolTipText = "Output Window";
-            this.toolBarButtonOutputWindow.Visible = false;
-            // 
-            // toolBarButtonTaskList
-            // 
-            this.toolBarButtonTaskList.ImageIndex = 6;
-            this.toolBarButtonTaskList.Name = "toolBarButtonTaskList";
-            this.toolBarButtonTaskList.ToolTipText = "Task List";
-            this.toolBarButtonTaskList.Visible = false;
-            // 
-            // toolBarButtonRun
-            // 
-            this.toolBarButtonRun.DropDownMenu = this.contextMenuDataBases;
-            this.toolBarButtonRun.ImageIndex = 12;
-            this.toolBarButtonRun.Name = "toolBarButtonRun";
-            this.toolBarButtonRun.Style = System.Windows.Forms.ToolBarButtonStyle.DropDownButton;
-            this.toolBarButtonRun.Text = "Run Query";
-            this.toolBarButtonRun.ToolTipText = "Run query";
-            // 
-            // contextMenuDataBases
-            // 
-            this.contextMenuDataBases.Popup += new System.EventHandler(this.contextMenuDataBases_Popup);
-            // 
-            // toolBarButtonStop
-            // 
-            this.toolBarButtonStop.ImageIndex = 28;
-            this.toolBarButtonStop.Name = "toolBarButtonStop";
-            this.toolBarButtonStop.Text = "Stop Query";
-            this.toolBarButtonStop.ToolTipText = "Stop current execution";
-            // 
-            // toolBarButtonSeparator3
-            // 
-            this.toolBarButtonSeparator3.Name = "toolBarButtonSeparator3";
-            this.toolBarButtonSeparator3.Style = System.Windows.Forms.ToolBarButtonStyle.Separator;
-            // 
-            // toolBarEnterpriseManager
-            // 
-            this.toolBarEnterpriseManager.ImageIndex = 13;
-            this.toolBarEnterpriseManager.Name = "toolBarEnterpriseManager";
-            this.toolBarEnterpriseManager.Text = "Enterprise Manager";
-            this.toolBarEnterpriseManager.ToolTipText = "SQL Server Enterprise Manager";
-            // 
-            // toolBarprofiler
-            // 
-            this.toolBarprofiler.ImageIndex = 14;
-            this.toolBarprofiler.Name = "toolBarprofiler";
-            this.toolBarprofiler.Text = "SQL Profiler";
-            this.toolBarprofiler.ToolTipText = "SQL Profiler";
-            // 
-            // toolBarButtonSeparator4
-            // 
-            this.toolBarButtonSeparator4.Name = "toolBarButtonSeparator4";
-            this.toolBarButtonSeparator4.Style = System.Windows.Forms.ToolBarButtonStyle.Separator;
-            this.toolBarButtonSeparator4.Visible = false;
-            // 
-            // timer_StartUp
-            // 
-            this.timer_StartUp.Tick += new System.EventHandler(this.timer_StartUp_Tick);
-            // 
-            // menuExtender
-            // 
-            this.menuExtender.ImageList = this.imageList;
+            this.mainMenu.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
+            this.menuItemFile,
+            this.menuItem3,
+            this.menuItemView,
+            this.menuItemTools,
+            this.menuItem_Plugins,
+            this.menuItemWindow,
+            this.menuItemHelp});
             // 
             // MainForm
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
-            this.ClientSize = new System.Drawing.Size(855, 672);
+            this.ClientSize = new System.Drawing.Size(1351, 837);
             this.Controls.Add(this.toolBar);
             this.Controls.Add(this.statusBar);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.Menu = this.mainMenu;
             this.Name = "MainForm";
-            this.Text = "QueryCommander";
+            this.Text = "Query Editor";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Closing += new System.ComponentModel.CancelEventHandler(this.MainForm_Closing);
             this.Load += new System.EventHandler(this.MainForm_Load);
@@ -1327,15 +1333,15 @@ namespace QueryCommander
 
 		private void menuItem_SaveAs_Click(object sender, System.EventArgs e)
 		{
-			SaveDocument();
+			//SaveDocument();
 		}
 
 		private void menuItem_Save_Click(object sender, System.EventArgs e)
 		{
-			if(ActiveQueryForm.FileName.Length>0)
-				ActiveQueryForm.SaveAs(ActiveQueryForm.FileName);
-			else
-				menuItem_SaveAs_Click(sender,e);
+			//if(ActiveQueryForm.FileName.Length>0)
+			//	ActiveQueryForm.SaveAs(ActiveQueryForm.FileName);
+			//else
+			//	menuItem_SaveAs_Click(sender,e);
 
 		}
 
@@ -1624,8 +1630,12 @@ namespace QueryCommander
 			{
 				try
 				{
+                    foreach (MenuItem item in mainMenu.MenuItems)
+                    {
+						item.Visible = false;
+                    }
 
-
+					this.Text = Shared.AppKeyObject.Value;
 					string strExeFilePath = System.Reflection.Assembly.GetExecutingAssembly().Location;
 					//This will strip just the working path name:
 					//C:\Program Files\MyApplication
@@ -1688,10 +1698,10 @@ namespace QueryCommander
 
 		private void MainForm_Closing(object sender, System.ComponentModel.CancelEventArgs e)
 		{
-			string configFile = Path.Combine(Path.GetDirectoryName(Application.ExecutablePath), "DockManager.config");
-			dockManager.SaveAsXml(configFile);
-			VSSConnectionCollectionFactory.Save(vssConnectionCollection);
-			WorkSpaceFactory.Save(Application.StartupPath + "\\WorkSpace.config", workSpaceCollection);
+			//string configFile = Path.Combine(Path.GetDirectoryName(Application.ExecutablePath), "DockManager.config");
+			//dockManager.SaveAsXml(configFile);
+			//VSSConnectionCollectionFactory.Save(vssConnectionCollection);
+			//WorkSpaceFactory.Save(Application.StartupPath + "\\WorkSpace.config", workSpaceCollection);
 		}
 
 		private void menuItemFindNext_Click(object sender, System.EventArgs e)

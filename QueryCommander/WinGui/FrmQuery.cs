@@ -199,87 +199,134 @@ namespace QueryCommander
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.components = new System.ComponentModel.Container();
-			System.Resources.ResourceManager resources = new System.Resources.ResourceManager(typeof(FrmQuery));
-			this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-			this.lstv_Commands = new System.Windows.Forms.ListView();
-			this.columnHeader1 = new System.Windows.Forms.ColumnHeader();
-			this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-			this.cmShortcutMeny = new System.Windows.Forms.ContextMenu();
-			this.qcTextEditor = new QueryCommander.Editor.TextEditorControlWrapper();
-			this.ExecutionTimer = new System.Windows.Forms.Timer(this.components);
-			this.SuspendLayout();
-			// 
-			// imageList1
-			// 
-			this.imageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth4Bit;
-			this.imageList1.ImageSize = new System.Drawing.Size(16, 16);
-			this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
-			this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-			// 
-			// lstv_Commands
-			// 
-			this.lstv_Commands.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-																							this.columnHeader1});
-			this.lstv_Commands.FullRowSelect = true;
-			this.lstv_Commands.HideSelection = false;
-			this.lstv_Commands.LabelWrap = false;
-			this.lstv_Commands.Location = new System.Drawing.Point(304, 104);
-			this.lstv_Commands.MultiSelect = false;
-			this.lstv_Commands.Name = "lstv_Commands";
-			this.lstv_Commands.Size = new System.Drawing.Size(200, 136);
-			this.lstv_Commands.SmallImageList = this.imageList1;
-			this.lstv_Commands.Sorting = System.Windows.Forms.SortOrder.Ascending;
-			this.lstv_Commands.TabIndex = 1;
-			this.lstv_Commands.TabStop = false;
-			this.lstv_Commands.View = System.Windows.Forms.View.SmallIcon;
-			this.lstv_Commands.Visible = false;
-			this.lstv_Commands.KeyDown += new System.Windows.Forms.KeyEventHandler(this.lstv_Commands_KeyDown);
-			this.lstv_Commands.Leave += new System.EventHandler(this.lstv_Commands_Leave);
-			this.lstv_Commands.MouseMove += new System.Windows.Forms.MouseEventHandler(this.lstv_Commands_MouseMove);
-			// 
-			// columnHeader1
-			// 
-			this.columnHeader1.Width = 200;
-			// 
-			// qcTextEditor
-			// 
-			this.qcTextEditor.AllowDrop = true;
-			this.qcTextEditor.AutoScroll = true;
-			this.qcTextEditor.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.qcTextEditor.Encoding = ((System.Text.Encoding)(resources.GetObject("qcTextEditor.Encoding")));
-			this.qcTextEditor.IsIconBarVisible = false;
-			this.qcTextEditor.Location = new System.Drawing.Point(2, 2);
-			this.qcTextEditor.Name = "qcTextEditor";
-			this.qcTextEditor.SelectedText = "";
-			this.qcTextEditor.SelectionStart = 0;
-			this.qcTextEditor.ShowEOLMarkers = true;
-			this.qcTextEditor.ShowInvalidLines = false;
-			this.qcTextEditor.ShowSpaces = true;
-			this.qcTextEditor.ShowTabs = true;
-			this.qcTextEditor.ShowVRuler = true;
-			this.qcTextEditor.Size = new System.Drawing.Size(788, 618);
-			this.qcTextEditor.TabIndex = 2;
-			this.qcTextEditor.KeyPressEvent += new QueryCommander.Editor.TextEditorControlWrapper.KeyPressEventHandler(this.qcTextEditor_KeyPressEvent);
-			this.qcTextEditor.RMouseUpEvent += new QueryCommander.Editor.TextEditorControlWrapper.MYMouseRButtonUpEventHandler(this.qcTextEditor_MouseUp);
-			// 
-			// ExecutionTimer
-			// 
-			this.ExecutionTimer.Tick += new System.EventHandler(this.ExecutionTimer_Tick);
-			// 
-			// FrmQuery
-			// 
-			this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
-			this.ClientSize = new System.Drawing.Size(792, 622);
-			this.Controls.Add(this.lstv_Commands);
-			this.Controls.Add(this.qcTextEditor);
-			this.DockableAreas = WeifenLuo.WinFormsUI.DockAreas.Document;
-			this.DockPadding.All = 2;
-			this.Name = "FrmQuery";
-			this.Closing += new System.ComponentModel.CancelEventHandler(this.FrmQuery_Closing);
-			this.Load += new System.EventHandler(this.FrmQuery_Load);
-			this.Enter += new System.EventHandler(this.FrmQuery_Enter);
-			this.ResumeLayout(false);
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmQuery));
+         //   ICSharpCode.TextEditor.Document.DefaultDocument defaultDocument1 = new ICSharpCode.TextEditor.Document.DefaultDocument();
+            ICSharpCode.TextEditor.Document.DefaultFormattingStrategy defaultFormattingStrategy1 = new ICSharpCode.TextEditor.Document.DefaultFormattingStrategy();
+            ICSharpCode.TextEditor.Document.DefaultHighlightingStrategy defaultHighlightingStrategy1 = new ICSharpCode.TextEditor.Document.DefaultHighlightingStrategy();
+            ICSharpCode.TextEditor.Document.GapTextBufferStrategy gapTextBufferStrategy1 = new ICSharpCode.TextEditor.Document.GapTextBufferStrategy();
+            ICSharpCode.TextEditor.Document.DefaultTextEditorProperties defaultTextEditorProperties1 = new ICSharpCode.TextEditor.Document.DefaultTextEditorProperties();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.lstv_Commands = new System.Windows.Forms.ListView();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.cmShortcutMeny = new System.Windows.Forms.ContextMenu();
+            this.qcTextEditor = new QueryCommander.Editor.TextEditorControlWrapper();
+            this.ExecutionTimer = new System.Windows.Forms.Timer(this.components);
+            this.SuspendLayout();
+            // 
+            // imageList1
+            // 
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "");
+            this.imageList1.Images.SetKeyName(1, "");
+            this.imageList1.Images.SetKeyName(2, "");
+            this.imageList1.Images.SetKeyName(3, "");
+            this.imageList1.Images.SetKeyName(4, "");
+            this.imageList1.Images.SetKeyName(5, "");
+            // 
+            // lstv_Commands
+            // 
+            this.lstv_Commands.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1});
+            this.lstv_Commands.FullRowSelect = true;
+            this.lstv_Commands.HideSelection = false;
+            this.lstv_Commands.LabelWrap = false;
+            this.lstv_Commands.Location = new System.Drawing.Point(365, 120);
+            this.lstv_Commands.MultiSelect = false;
+            this.lstv_Commands.Name = "lstv_Commands";
+            this.lstv_Commands.Size = new System.Drawing.Size(240, 157);
+            this.lstv_Commands.SmallImageList = this.imageList1;
+            this.lstv_Commands.Sorting = System.Windows.Forms.SortOrder.Ascending;
+            this.lstv_Commands.TabIndex = 1;
+            this.lstv_Commands.TabStop = false;
+            this.lstv_Commands.UseCompatibleStateImageBehavior = false;
+            this.lstv_Commands.View = System.Windows.Forms.View.SmallIcon;
+            this.lstv_Commands.Visible = false;
+            this.lstv_Commands.KeyDown += new System.Windows.Forms.KeyEventHandler(this.lstv_Commands_KeyDown);
+            this.lstv_Commands.Leave += new System.EventHandler(this.lstv_Commands_Leave);
+            this.lstv_Commands.MouseMove += new System.Windows.Forms.MouseEventHandler(this.lstv_Commands_MouseMove);
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Width = 200;
+            // 
+            // qcTextEditor
+            // 
+            this.qcTextEditor.AllowDrop = true;
+            this.qcTextEditor.AutoScroll = true;
+            this.qcTextEditor.Dock = System.Windows.Forms.DockStyle.Fill;
+        //    defaultDocument1.FormattingStrategy = defaultFormattingStrategy1;
+        //    defaultHighlightingStrategy1.Extensions = new string[] {
+        //".SQL"};
+        //    defaultDocument1.HighlightingStrategy = defaultHighlightingStrategy1;
+        //    defaultDocument1.ReadOnly = false;
+        //    defaultDocument1.TextBufferStrategy = gapTextBufferStrategy1;
+        //    defaultDocument1.TextContent = "";
+            defaultTextEditorProperties1.AllowCaretBeyondEOL = false;
+            defaultTextEditorProperties1.AutoInsertCurlyBracket = true;
+            defaultTextEditorProperties1.BracketMatchingStyle = ICSharpCode.TextEditor.Document.BracketMatchingStyle.After;
+            defaultTextEditorProperties1.ConvertTabsToSpaces = false;
+            defaultTextEditorProperties1.CreateBackupCopy = false;
+            defaultTextEditorProperties1.DocumentSelectionMode = ICSharpCode.TextEditor.Document.DocumentSelectionMode.Normal;
+            defaultTextEditorProperties1.EnableFolding = true;
+            defaultTextEditorProperties1.Encoding = ((System.Text.Encoding)(resources.GetObject("defaultTextEditorProperties1.Encoding")));
+            defaultTextEditorProperties1.Font = new System.Drawing.Font("Courier New", 10F);
+            defaultTextEditorProperties1.HideMouseCursor = false;
+            defaultTextEditorProperties1.IndentStyle = ICSharpCode.TextEditor.Document.IndentStyle.Smart;
+            defaultTextEditorProperties1.IsIconBarVisible = false;
+            defaultTextEditorProperties1.LineTerminator = "\r\n";
+            defaultTextEditorProperties1.LineViewerStyle = ICSharpCode.TextEditor.Document.LineViewerStyle.None;
+            defaultTextEditorProperties1.MouseWheelScrollDown = true;
+            defaultTextEditorProperties1.MouseWheelTextZoom = true;
+            defaultTextEditorProperties1.ShowEOLMarker = true;
+            defaultTextEditorProperties1.ShowHorizontalRuler = false;
+            defaultTextEditorProperties1.ShowInvalidLines = false;
+            defaultTextEditorProperties1.ShowLineNumbers = true;
+            defaultTextEditorProperties1.ShowMatchingBracket = true;
+            defaultTextEditorProperties1.ShowSpaces = true;
+            defaultTextEditorProperties1.ShowTabs = true;
+            defaultTextEditorProperties1.ShowVerticalRuler = true;
+            defaultTextEditorProperties1.TabIndent = 4;
+            defaultTextEditorProperties1.UseAntiAliasedFont = false;
+            defaultTextEditorProperties1.VerticalRulerRow = 80;
+           ///* defaultDocument1.TextEditorProperties = defaultTextEditorProperties1;
+           // this.qcTextEdit*/or.Document = defaultDocument1;
+            this.qcTextEditor.Encoding = ((System.Text.Encoding)(resources.GetObject("qcTextEditor.Encoding")));
+            this.qcTextEditor.IsIconBarVisible = false;
+            this.qcTextEditor.Location = new System.Drawing.Point(2, 2);
+            this.qcTextEditor.Name = "qcTextEditor";
+            this.qcTextEditor.SelectedText = "";
+            this.qcTextEditor.SelectionStart = 0;
+            this.qcTextEditor.ShowEOLMarkers = true;
+            this.qcTextEditor.ShowInvalidLines = false;
+            this.qcTextEditor.ShowSpaces = true;
+            this.qcTextEditor.ShowTabs = true;
+            this.qcTextEditor.ShowVRuler = true;
+            this.qcTextEditor.Size = new System.Drawing.Size(788, 618);
+            this.qcTextEditor.TabIndex = 2;
+            this.qcTextEditor.TextEditorProperties = defaultTextEditorProperties1;
+            this.qcTextEditor.KeyPressEvent += new QueryCommander.Editor.TextEditorControlWrapper.KeyPressEventHandler(this.qcTextEditor_KeyPressEvent);
+            this.qcTextEditor.RMouseUpEvent += new QueryCommander.Editor.TextEditorControlWrapper.MYMouseRButtonUpEventHandler(this.qcTextEditor_MouseUp);
+            // 
+            // ExecutionTimer
+            // 
+            this.ExecutionTimer.Tick += new System.EventHandler(this.ExecutionTimer_Tick);
+            // 
+            // FrmQuery
+            // 
+            this.AutoScaleBaseSize = new System.Drawing.Size(6, 15);
+            this.ClientSize = new System.Drawing.Size(792, 622);
+            this.Controls.Add(this.lstv_Commands);
+            this.Controls.Add(this.qcTextEditor);
+            this.DockableAreas = WeifenLuo.WinFormsUI.DockAreas.Document;
+            this.Name = "FrmQuery";
+            this.Padding = new System.Windows.Forms.Padding(2);
+            this.Closing += new System.ComponentModel.CancelEventHandler(this.FrmQuery_Closing);
+            this.Load += new System.EventHandler(this.FrmQuery_Load);
+            this.Enter += new System.EventHandler(this.FrmQuery_Enter);
+            this.ResumeLayout(false);
 
 		}
 		#endregion
@@ -2304,7 +2351,15 @@ namespace QueryCommander
 
 				// Snippets
 				XmlDocument xmlSnippets = new XmlDocument();
-				xmlSnippets.Load(Application.StartupPath+@"\Snippets.xml");
+
+				string strExeFilePath = System.Reflection.Assembly.GetExecutingAssembly().Location;
+				//This will strip just the working path name:
+				//C:\Program Files\MyApplication
+				string strWorkPath = System.IO.Path.GetDirectoryName(strExeFilePath);
+
+				string strSettingsXmlFilePath = System.IO.Path.Combine(strWorkPath, "Snippets.xml");
+
+				xmlSnippets.Load(strSettingsXmlFilePath);
 				XmlNodeList xmlNodeList = xmlSnippets.GetElementsByTagName("snippets");
 
 				if(qcTextEditor.SelectedText.Length>1)

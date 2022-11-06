@@ -1271,7 +1271,7 @@ namespace WeifenLuo.WinFormsUI
 		/// <include file='CodeDoc\DockPanel.xml' path='//CodeDoc/Class[@name="DockPanel"]/Method[@name="SaveAsXml(Stream, Encoding)"]/*'/>
 		public void SaveAsXml(Stream stream, Encoding encoding)
 		{
-			DockPanelPersist.SaveAsXml(this, stream, encoding);
+DockPanelPersist.SaveAsXml(this, stream, encoding);
 		}
 
 		/// <include file='CodeDoc\DockPanel.xml' path='//CodeDoc/Class[@name="DockPanel"]/Method[@name="LoadFromXml"]/*'/>

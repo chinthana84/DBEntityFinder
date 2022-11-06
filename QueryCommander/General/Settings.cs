@@ -81,11 +81,11 @@ namespace QueryCommander.Config
 		}
 		public void Save()
 		{
-			string filename = Path.Combine(Path.GetDirectoryName(Application.ExecutablePath), "Settings.config");
-			XmlSerializer ser = new XmlSerializer(typeof(Settings));
-			TextWriter writer = new StreamWriter(filename);
-			ser.Serialize(writer, this);
-			writer.Close();
+			//string filename = Path.Combine(Path.GetDirectoryName(Application.ExecutablePath), "Settings.config");
+			//XmlSerializer ser = new XmlSerializer(typeof(Settings));
+			//TextWriter writer = new StreamWriter(filename);
+			//ser.Serialize(writer, this);
+			//writer.Close();
 		}
 		
 		public Font GetFont()

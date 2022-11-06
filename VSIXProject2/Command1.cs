@@ -131,17 +131,26 @@ namespace VSIXProject2
                
                 if (dataTable.Rows.Count == 1)
                 {
-                    Shared.SearchDefinition = dataTable.Rows[0][0].ToString();
-                    Shared.AppKeyObject = appKeyObject;
-                    MainForm mainForm = new MainForm("");
-                    mainForm.ShowDialog();
+                    try
+                    {
+                        Shared.SearchDefinition = dataTable.Rows[0][0].ToString();
+                        Shared.AppKeyObject = appKeyObject;
+                        MainForm mainForm = new MainForm("");
+                        mainForm.ShowDialog();
+                    }
+                    catch (Exception)
+                    {
 
-                    frmViewer frmViewer = new frmViewer(appKeyObject);
-                    frmViewer.richTextBox1.Text = dataTable.Rows[0][0].ToString();
-                    //frmViewer.richTextBox1.SelectAll();
-                    frmViewer.sysntaxHighli();
-                    frmViewer.Text = appKeyObject.Value + " " + appKeyObject.dbType;
-                    frmViewer.ShowDialog();
+                        frmViewer frmViewer = new frmViewer(appKeyObject);
+                        frmViewer.richTextBox1.Text = dataTable.Rows[0][0].ToString();
+                        //frmViewer.richTextBox1.SelectAll();
+                        frmViewer.sysntaxHighli();
+                        frmViewer.Text = appKeyObject.Value + " " + appKeyObject.dbType;
+                        frmViewer.ShowDialog();
+                    }
+
+
+
                 }
                 else if (dataTable.Rows.Count > 1)
                 {
